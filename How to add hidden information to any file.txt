@@ -1,0 +1,40 @@
+How to add hidden information to any file. Yes, I love to take notes, because if there is a note, then then you do not have to strain and remember what it is about and for what. 
+Each of us has a bunch of files, service or code files, inside which it is not very convenient to make a note. Sometimes it is convenient to write a note that is not read in the usual way. 
+To do this, use the hidden file attributes tool. So, we put the package under the discreet name attr: 
+sudo apt install attr 
+Then do three custom actions Thunar, respectively, to add a hidden note, see the hidden note and remove the hidden note to the file.
+ 1. Custom action called "Add a description to the file" do on the command: 
+attr=`zenity --entry --title= "add hidden note to file" --text= "Enter note text, for example" --entry-text= " from Kovalsky $(date +%%x)"`; setfattr -n user.info -v "$attr "%f; notify-send " Description added" 
+Conditions the emergence of: daws are posing everywhere, except directories. 
+Icon any. 
+When you click on this custom action, a field appears in which you can enter a note.
+2. Custom action entitled "Show description of to file" do on Command: 
+notify-send-t 30000 ''"' getfattr --only-values %f`" 
+Conditions the emergence of: daws are posing everywhere, except directories. 
+Icon any. 
+When you click on this сustom action, a pop-up message appears with a previously recorded note. 
+Here it should be noted that in most files the information in user.info missing, but my favorite favorite Yandex when downloading mail from from the web version adds an indelible direct link to this file. Therefore, along with your note can get a link to download this file through Yandex mail. How about with the other posts - I don't know, because it is not in use.
+3. Custom action called "Delete custom file description" on the command: 
+setfattr-x user.info %n; notify-send 'Description deleted' 
+Conditions the emergence of: daws are posing everywhere, except directories. 
+Icon any. 
+When you click on this custom action, a pop-up message appears stating that the note has been deleted. 
+Information about about these functions there is in networks, if she and on this forum https://xubuntu-ru.net/how-to/699-osobyie-deystviya-v-thunar.html 
+The original, most likely from https://github.com/sakhalines/thunarXattr/blob/master/thunarXattr.txt.
+Only me for some reason, these three steps doesn't work immediately, we had barely finished. And the first action seemed inconvenient, because in the original text is inserted from the clipboard, which is an unnecessary move-copy something to the clipboard. 
+I washed down the first custom action on zenity with the ability to either write something or paste from the clipboard, and with a preset template / example of a hidden message. Everything works. When copying to another server or another medium, the above attributes are preserved, unlike, for example, emblems, which, in order to be preserved when transferring to another medium, must be transported together with the ~/directory.gvfs.
+I bring gratitude to the author of these PKM sakhalines and to him, probably, who wrote on the forum xubuntu-ru.net under the nickname "s-s". 
+----------
+And finally, on the sweet, it is possible to implement tags to files that allow you to open hidden in the metadata links to web pages, links to files, directories and any program. 
+!!!  Tags in files on Web pages, other files or directories in a Linux-based operating system
+Do action custom action Thunar, to open tag, contained in hidden comments to file.
+The name of the custom action: "Open tag"
+Command:
+xdg-open "`getfattr --only-values %f`"
+The condition for the appearance of: put jackdaws everywhere except in catalogs.
+Icon: any.
+Now, with the help of the сustom action called "Add description to the file" I add a tag (link) to the web pages, links to files, directories and any programs.. Clicking Custom action> "Open tag" > opens a link to a web page linked via a hidden tag file, directory or program.
+Those wishing to implement this solution, I recommend installing and configuring an antivirus in the system https://losst.ru/vybiraem-antivirus-dlya-linux, at least ClamAV. 
+Video how it works https://www.youtube.com/watch?v=GRhpp3MrM7Q&feature=youtu.be
+
+Hope that was useful. El guahiro.
