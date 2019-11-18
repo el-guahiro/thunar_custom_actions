@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+
+# see also: readlink -f
+
+use Cwd qw(abs_path getcwd);
+use File::Basename;
+use Getopt::Std;
+
+$0 =~ s:.*/::;
+
+$usage = "usage: $0 [-v] filename(s)\n";
+
+$opt_v = 0;
+getopts('v') or die $usage;
+die $usage unless @ARGV;
+
+foreach $file (@ARGV) {
+  if (-e $file) {
+    print "$file --> " if $opt_v;
+    $file = getcwd . '/' . $file if $file !~ m:^/:;
+    print abs_path($file),"\n";
+  } else {
+    warn "$0: no such file $file\n";
+  }
+}
