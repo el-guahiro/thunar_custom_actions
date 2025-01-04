@@ -1,1 +1,0 @@
-AAA=`zenity --entry --title="ImageMagick-quality" --text="Введите процент сжатия" --entry-text="80"`;if [ $? = 0 ];then for file in %F;do convert "$file" -quality $AAA "$file";done;fi
