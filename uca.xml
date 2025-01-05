@@ -1,0 +1,2076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>/usr/share/icons/el_guahiro/copy_name.png</icon>
+	<name>Скопировать имя файла</name>
+	<submenu></submenu>
+	<unique-id>1637043305151039-1</unique-id>
+	<command>basename %f| sed &quot;s/\.doc\|\.docx\|\.DOCX\|\.DOC\|\.PDF\|\.xls\|\.xlsx\|\.pdf//&quot; |tr -d &quot;\r\n&quot;| xclip -selection clipboard;notify-send &quot;имя файла в буфере обмена&quot;</command>
+	<description>без расширения, только имя</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/Hyperlink.png</icon>
+	<name>Скопировать путь</name>
+	<submenu></submenu>
+	<unique-id>1673624102151816-1</unique-id>
+	<command>readlink -f %f |  tr -d &quot;\r\n&quot;  | xclip -selection clipboard;notify-send &quot;путь к исходному файлу в буфере обмена&quot;</command>
+	<description>для создания гиперссылок</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/today.png</icon>
+	<name>Добавить дату к названию</name>
+	<submenu></submenu>
+	<unique-id>1666791252792087-1</unique-id>
+	<command>[ -f %f ] &amp;&amp; rename-with-date_file.sh %n ; [ -d %f ] &amp;&amp;  rename-with-date_folder.sh %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/red_arrow_to_high.png</icon>
+	<name>Переместить выбранное в папку уровнем выше</name>
+	<submenu></submenu>
+	<unique-id>1667323934329839-3</unique-id>
+	<command>mv -t ../ %F</command>
+	<description>файл переместить в папку уровнем выше</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/rename.png</icon>
+	<name>Сокращение файловых имён</name>
+	<submenu></submenu>
+	<unique-id>1690283897178320-11</unique-id>
+	<command> shorten_filenames_recursively.sh %n/**/* | zenity --progress --width=350 --height=100 --title=&quot;Сокращаю имена файлов&quot; --text &quot;........проверка сокращений!&quot; --auto-close --pulsate  ;  shorten_filenames_recursively.sh %n/* ; shorten_filenames_recursively.sh %n ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>mkdir %d/.backup ; cp -a %F .backup; cd .backup; shorten_folder_names_OPASNO.sh | zenity --progress --width=350 --height=100 --title=&quot;Сокращаю имена файлов&quot; --text &quot;........проверка сокращений!&quot; --auto-close --pulsate  ; cd %d ;  rm -r %N ; mv .backup/* %d ; rmdir .backup ;  notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/user-terminal.png</icon>
+	<name>Открыть терминал</name>
+	<submenu></submenu>
+	<unique-id>1662634697140966-2</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/root.png</icon>
+	<name>Open root Thunar here</name>
+	<submenu></submenu>
+	<unique-id>1665075693352767-12</unique-id>
+	<command>sh -c &quot;zenity --password | sudo -S thunar %n&quot;</command>
+	<description>Зайти проводником от root</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/ALL2folder.png</icon>
+	<name>Всё в новую папку!</name>
+	<submenu></submenu>
+	<unique-id>1674067126079678-2</unique-id>
+	<command>new_directory_from_selection.sh %F; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>выделяем нужное</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>aptdaemon-download</icon>
+	<name>Распаковать архив</name>
+	<submenu></submenu>
+	<unique-id>1705404150177636-10</unique-id>
+	<command>unarhive.sh %F ; trash-put %F ;notify-send &quot;архив успешно распакован без кракозябр!&quot; ; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>без кракозябр</description>
+	<range></range>
+	<patterns>*.7z;*.arj;*.bin;*.bin;*.cab;*.cab;*.cbr;*.deb;*.exe;*.gz;*.gzip;*.jar;*.one;*.pak;*.pak;*.pak;*.pkg;*.pkg;*.pkg;*.pkg;*.ppt;*.rar;*.rpm;*.sh;*.sib;*.sis;*.sisx;*.sit;*.sitx;*.spl;*.spl;*.tar;*.tar-gz;*.tgz;*.xar;*.zip;*.zip;*.zipx;*.00*</patterns>
+	<startup-notify/>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/external-link.jpg</icon>
+	<name>Отправить симлинк </name>
+	<submenu>Линки</submenu>
+	<unique-id>1715955217323262-1</unique-id>
+	<command>ln -s &quot;$(realpath %f)&quot; &quot;$(zenity --file-selection --directory --title=&quot;Выбери папку&quot;)&quot; ; # echo &quot;Ссылка в папке назначения&quot; | festival --tts --language russian</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/external-link2.jpg</icon>
+	<name>Отправить хардлинк</name>
+	<submenu>Линки</submenu>
+	<unique-id>1620730677801736-1</unique-id>
+	<command>cp -rl %f &quot;$(zenity --file-selection --directory --title=&quot;Выбери папку&quot;)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/destination-file.png</icon>
+	<name>открыть родную директорию размещения файла или каталога</name>
+	<submenu>Линки</submenu>
+	<unique-id>1582558637730642-8</unique-id>
+	<command>open-parent-dir.sh %f</command>
+	<description>попадает в директорию, где находтися файл/папка, куда ссылается линк</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/destination-folder.png</icon>
+	<name>открыть сам целевой КАТАЛОГ</name>
+	<submenu>Линки</submenu>
+	<unique-id>1605292608543000-47</unique-id>
+	<command> thunar &quot;$(abspath %f)&quot;</command>
+	<description>открывает сам каталог по месту размещения</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/brackets-icon.png</icon>
+	<name>Относительные симлинки - в абсолютные</name>
+	<submenu>Линки</submenu>
+	<unique-id>1696923922998777-2</unique-id>
+	<command>relink2true.sh %N</command>
+	<description>для каталогов и подкаталогов</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/yes.png</icon>
+	<name>Заменить все симлинки на хардлинки в КАТАЛОГЕ</name>
+	<submenu>Линки</submenu>
+	<unique-id>1667588817617961-76</unique-id>
+	<command>symlink2hardlink.sh  ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>для копирования, например, на флешку</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/hidden_message.png</icon>
+	<name>Найти хардлинки на файл</name>
+	<submenu>Линки</submenu>
+	<unique-id>1623233325524711-1</unique-id>
+	<command>zenity  --width 400 --height 400 --info --title=&quot;Все хардлинки на файл&quot; --text=&quot;$(find /$HOME -samefile %f)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/external-link.jpg</icon>
+	<name>Открыть каталог перемещённой цели битой ссылки</name>
+	<submenu>Линки</submenu>
+	<unique-id>1667743294623705-165</unique-id>
+	<command>thunar &quot;$(dirname &quot;$(find $HOME  \! -type l -name %n -print0 | xargs -0 stat -c &apos;%%Y %%n&apos; | sort | head -1 | cut -c 12-)&quot;)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/home3.png</icon>
+	<name>ОПТИМИЗАЦИЯ МЕСТА : дубликаты- в симлинки</name>
+	<submenu>Линки</submenu>
+	<unique-id>1704798921257300-1</unique-id>
+	<command>rdfind -makeresultsfile true %n</command>
+	<description>сокращает место на диске</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>searching</icon>
+	<name>GUI поиск файлов</name>
+	<submenu></submenu>
+	<unique-id>1708416615049424-1</unique-id>
+	<command>mate-search-tool --hidden --follow --sortby=date --path=%f</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>drill-search-gtk</icon>
+	<name>Поиск текста ВО ВСЕХ файлах, включая таблицы</name>
+	<submenu></submenu>
+	<unique-id>1732645022862918-1</unique-id>
+	<command>fulltext_search_3_methods.sh</command>
+	<description>Рекурсивный поиск текста внутри файлов</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/codesearch.png</icon>
+	<name>Поиск в файлах PDF рекурсивно</name>
+	<submenu></submenu>
+	<unique-id>1716970067250295-1</unique-id>
+	<command>xfce4-terminal --default-working-directory=%f -H -e searchinPDF_with_annots.sh</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/search-rename.png</icon>
+	<name>Поиск в выбранных файлах, включая аннотации</name>
+	<submenu></submenu>
+	<unique-id>1661947379078979-2</unique-id>
+	<command>xfce4-terminal -H -e &quot;findifile.sh %N&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/pdf2jpeg.png</icon>
+	<name>PDF----&gt; JPEG</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1667741686034370-161</unique-id>
+	<command>pdftoppm -jpeg -jpegopt quality=100 -r 300 %n &quot;$(basename --suffix=pdf %n)&quot;.jpg | zenity --progress --width=400 --height=100 --title=&quot;извлекаем картинку&quot; --text &quot;работаю...&quot; --auto-close --pulsate; touch -r  %n &quot;$(basename --suffix=pdf %n)&quot;*.jpg ; rename &apos;s/..jpg-//&apos; *.jpg ; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>Алтернативаная команда (качество хуже) : pdftoppm -png -r 300 %n ./%n или mutool convert -o &quot;$(basename --suffix=pdf %n)&quot;png %n</description>
+	<range></range>
+	<patterns>*.PDF;*.pdf;*.tif;*.tiff;*.TIF;*.TIFF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/clippy.png</icon>
+	<name>Извлечь страницы из PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1640165176503705-6</unique-id>
+	<command>str=`zenity --entry --title=&quot;Картинки в PDF&quot; --text=&quot;Введите номер страницы или несколько - через тире или запятую&quot; --entry-text=&quot;10-15&quot;`; cpdf %n $str -o %nстр.&quot;$str&quot;.pdf ; rename &apos;s/[.]pdfстр|PDFстр/ стр/gi&apos; %f*; notify-send &quot;извлекли страницы&quot;</command>
+	<description>Предыдущее было: str=`zenity --entry --title=&quot;Картинки в PDF&quot; --text=&quot;Введите номер страницы или несколько - через тире или запятую&quot; --entry-text=&quot;10-15&quot;`; qpdf %n --pages %n $str -- %nстр.&quot;$str&quot;.pdf ; rename &apos;s/[.]pdfстр/ стр/gi&apos; %f*; notify-send &quot;извлекли страницы&quot;</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/pdf-multicompress.png</icon>
+	<name>Объединить неск. pdf</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1667885390386789-12</unique-id>
+	<command>cpdf -merge %N -o &quot;$(basename --suffix=pdf %n)&quot;_summa.pdf ; touch -r %n &quot;$(basename --suffix=pdf %n)&quot;_summa.pdf ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>Первая версия:  qpdf --empty --pages %N -- &quot;$(basename --suffix=pdf %n)&quot;_summa.pdf ; touch -r %n &quot;$(basename --suffix=pdf %n)&quot;_summa.pdf ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<startup-notify/>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/A3_ГОСТ.png</icon>
+	<name>PDF 2 A4 Portrait A3 Landscape</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1683920223564238-11</unique-id>
+	<command>pdf2A1-A4v2.sh %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/A3_ГОСТ.png</icon>
+	<name>PDF в формат A по ГОСТ2.301-68</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1683920257188566-12</unique-id>
+	<command>pdf2A1-A4.sh %N</command>
+	<description>format=`zenity --entry --title=&quot;Формат чертежа PDF&quot; --text=&quot;Если A3, то 3, и т.д. или поставьте пробел, чтоб выйти&quot; --entry-text=&quot;3&quot;`; orient=`zenity --entry --title=&quot;Ориентация чертежа PDF&quot; --text=&quot;Если ландшафтная, поставьте --landscape, портретная - сотрите текст в окне, чтоб  выйти - поставьте +&quot; --entry-text=&quot;--landscape&quot;`;pdfjam %n $orient --a&quot;$format&quot;paper --outfile %n</description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/contrast_pdf.png</icon>
+	<name>Сделать PDF читабельным</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1671650415505861-2</unique-id>
+	<command>touch -r %f .1 ; mkdir %d/backup ; cp %F backup; unsharp_mask_PDF_5_methods.sh %F | zenity --progress --width=400 --height=100 --title=&quot;Делаем читабельно&quot; --text &quot;работаю.&quot; --auto-close --pulsate; mpv /usr/share/sounds/sound-icons/chord-7.wav ; notify-send &quot;Значительно лучше!&quot; ;  touch -r .1 %f ; rm  .1 ; sleep 60 ; trash-put backup</command>
+	<description></description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/pdf-margins.png</icon>
+	<name>Сжать PDF, 6 способов</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1671301309572999-12</unique-id>
+	<command>touch -r %f .1 ; mkdir %d/backup ; cp %F backup; zenity --question --ok-label=&quot;Хочу сжать PDF!&quot;  --cancel-label=&quot;Случайно нажал, выйти?&quot;  ; case $? in   0) compress_PDF_6_methods.sh %F ;; 1) rm -rvf ./backup; exit o  ;; esac; compare_filesize2.pl  ./backup/%n  %n | festival --tts --language russian ;  notify-send &quot;сжали PDF&quot; ;  touch -r .1 %f ; rm ./ .1 ; sleep 120 ; trash-put backup</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>wps-office2019-pdfmain</icon>
+	<name>Сжать PDF (cpdf) на 20% прибл</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1735508853452770-2</unique-id>
+	<command>cpdf -squeeze %n -o compr_%n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<audio-files/>
+	<other-files/>
+</action>
+<action>
+	<icon>pdfeditor</icon>
+	<name>Очистить PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1605358313779409-7</unique-id>
+	<command>opticlean.sh %F</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/OCR.png</icon>
+	<name>Распознать PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1690283164766050-2</unique-id>
+	<command>touch -r %f .1 ; mkdir %d/backup ; cp %f backup ; pdfsandwich  -lang  rus+eng  -rgb  -o  %n %n | zenity --progress --width=400 --height=100 --title=&quot;Распознаю текст в файле PDF&quot;  --text  работаю...  --auto-close --pulsate ; compress-pdf-standart.sh %n ; notify-send &quot;Закончено!&quot; ;  touch -r .1 %f ; exiftool -r -overwrite_original -P -all= %n ; exiftool -TagsFromFile %n %d/backup/%n;  rm %n_original ; rm  .1 ; sleep 60 ; trash-put backup</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>application-vnd.openxmlformats-officedocument.wordprocessingml.template</icon>
+	<name>PDF  2 DOCX</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1667589211453412-80</unique-id>
+	<command>PDF_2_DOCX_3_methods_.sh %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/rigt.png</icon>
+	<name>Повернуть PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1635188318835016-1</unique-id>
+	<command>touch -r %f .1 ; zenity --question --text=&quot;Предварительно оптимизировать?&quot;  --ok-label=&quot;да&quot;  --cancel-label=&quot;нет&quot;  ; case $? in   0) opticlean.sh %f ;; 1)  ;; esac ;  c_rotate_pdf.sh %N; touch -r .1 %f ; rm ./ .1 ;  touch -d &quot;$(date -R -r %n) - 1 seconds&quot; %n ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>любую из: q_rotate_pdf.sh или j_rotate_pdf.sh</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF;*.TIF;*.tif</patterns>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/page.png</icon>
+	<name>Разделить PDF на отдельные страницы</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1689077045417143-1</unique-id>
+	<command>pdfseparate %n %%d_%n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<startup-notify/>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/pdf-cutter.png</icon>
+	<name>Разрезать PDF на части</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1701093794461366-1</unique-id>
+	<command>xsize=`zenity --entry --title=&quot;разрезать PDF по ширине&quot; --text=&quot;На сколько частей?, например 3, или поставьте 1, чтоб не резать&quot; --entry-text=&quot;3&quot;`; ysize=`zenity --entry --title=&quot;разрезать PDF по высоте&quot; --text=&quot;На сколько частей?, например 2, или поставьте 1, чтоб не резать&quot; --entry-text=&quot;1&quot;`; mutool poster -x $xsize -y $ysize  %n &quot;$xsize&quot;Шх&quot;$ysize&quot;В_%n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/crop_pdf.png</icon>
+	<name>Обрезать края PDF</name>
+	<submenu>Действия с PDF/подрезка и масштабирование</submenu>
+	<unique-id>1696487662435019-8</unique-id>
+	<command>touch -r %f .1 ; обрезать_pdf.sh %F;   mpv /usr/share/sounds/sound-icons/percussion-28.wav ; touch -r .1 %f ; rm ./ .1 ; notify-send &quot;Обрезали PDF&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>rednotebook</icon>
+	<name>Обрезать лишние поля в PDF</name>
+	<submenu>Действия с PDF/подрезка и масштабирование</submenu>
+	<unique-id>1605358344507806-8</unique-id>
+	<command>pdfcrop %n  %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/logo_pdf.png</icon>
+	<name>Масштабировать поле PDF под принтер (поля)</name>
+	<submenu>Действия с PDF/подрезка и масштабирование</submenu>
+	<unique-id>1671729222572560-5</unique-id>
+	<command>scale=`zenity --entry --title=&quot;Степень масштабирования&quot; --text=&quot;0.95 - чтоб появились поля, 1.2 - если у дебилов не настроен сканер. Разделитель - ТОЧКА&quot; --entry-text=&quot;0.95&quot;`; pdfjam --scale $scale %n</command>
+	<description>Повернуть для книжной ориентации</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>rednotebook</icon>
+	<name>Склеить страницы двух PDF рядом:  A4&gt;A3</name>
+	<submenu>Действия с PDF/буклеты и форматы</submenu>
+	<unique-id>1688452037871318-1</unique-id>
+	<command>pdfjam %N --papersize &apos;{21cm, 29.7cm}&apos; --nup 2x1 --landscape --outfile sum_%n</command>
+	<description>Для альбомов с переводом применяю</description>
+	<range></range>
+	<patterns>*.pdf;*PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>2048</icon>
+	<name>Альбом A3&gt;разрезать до книжной A4</name>
+	<submenu>Действия с PDF/буклеты и форматы</submenu>
+	<unique-id>1688452203167498-8</unique-id>
+	<command>mutool poster -x 2 %n A4_%n</command>
+	<description>СКРЫТ, галку на: Другие</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>rednotebook</icon>
+	<name>Документ A4 - в буклет 2*1/2 A4</name>
+	<submenu>Действия с PDF/буклеты и форматы</submenu>
+	<unique-id>1688536073081321-9</unique-id>
+	<command>pdfbook2 %n</command>
+	<description>из пакета pdfjam. Скрыт. Галку на Другие</description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>gnome-logo-icon</icon>
+	<name>Графический штамп в  PDF 2, векторный</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1595148450418758-68</unique-id>
+	<command>zenity --question --text=&quot;Предварительно оптимизировать?&quot;  --ok-label=&quot;да&quot;  --cancel-label=&quot;нет&quot;  ; case $? in   0) opticlean.sh %f ;; 1)  ;; esac ; markpdf %f ~/Изображения/Штампы\ К\ ПРОИЗВОДСТВУ\ РАБОТ/stamp_.png %f2 -x -1 -y -1 --opacity=1.0; mv %f2 %f</command>
+	<description>Положение штампа регулируем x и y</description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>gnome-logo-icon</icon>
+	<name>Графический штамп в  PDF , псевдоскан</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1595148434355036-67</unique-id>
+	<command>stamp.sh %n | zenity --progress --width=400 --height=100 --title=Делаю watermark  --text  работаю.  --auto-close --pulsate; compress-pdf-standart.sh %f ; mpv /usr/share/sounds/sound-icons/percussion-28.wav ; notify-send &quot;Добавили штамп&quot;</command>
+	<description>Делает неизменяемый PDF, но безотказен</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>gnome-logo-icon</icon>
+	<name>НЕУДАЛЯЕМЫЙ ТЕКСТОВЫЙ Watermark на PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1696487587378444-3</unique-id>
+	<command>touch -r %f .1 ; watermark=`zenity --entry --title=&quot;Добавить водяной знак&quot; --text=&quot;Напишите что-то например ОБРАЗЕЦ&quot; --entry-text=&quot;ОБРАЗЕЦ&quot;`; convert -density 300 -pointsize 90  -draw &quot;gravity center rotate 45  fill rgba(100%%,0,0,0.50) font Courier-Bold text 0,0 &apos;$watermark&apos;&quot; %f %f1; mv %f1 %f | zenity --progress --width=400 --height=100 --title=Делаю watermark  --text  работаю.  --auto-close --pulsate; compress-pdf-standart.sh %f ; exiftool  -overwrite_original -all= %n.pdf; mpv /usr/share/sounds/sound-icons/percussion-28.wav ; touch -r .1 %f ; rm ./ .1 ; notify-send &quot;Добавили водяной знак&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/avatar92.png</icon>
+	<name>Нумерация PDF шрифтом №36!!!!</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1735549886061532-4</unique-id>
+	<command>cpdf %n -add-text  &quot;%%Page&quot; -bottom 30 -font-size 36 -color red -o нумерованный_%n</command>
+	<description>Шрифтом №36!!!!</description>
+	<range>*</range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/img_51584.png</icon>
+	<name>Нумеровать страницы</name>
+	<submenu>Действия с PDF/буклеты и форматы</submenu>
+	<unique-id>1670362463835061-1</unique-id>
+	<command>pdfjam   --outfile _%n  --pagecommand &apos;{}&apos; %n</command>
+	<description>Так себе, шрифт случайный</description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Автовыравнивание PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1696487837228151-15</unique-id>
+	<command>touch -r %f .1 ; mkdir %d/backup ; cp %F backup ; correct_screw_PDF_3_methods.sh %f | zenity --progress --width=400 --height=100 --title=&quot;Автоповорот страниц&quot;  --text  работаю.  --auto-close --pulsate ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg ; touch -r .1 %f ; rm  .1 ; sleep 60 ; trash-put backup</command>
+	<description>Не работает с таблицами, не настроил пока</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>emblem-encrypted-locked</icon>
+	<name>Поставить PDF под пароль</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1667742715554949-163</unique-id>
+	<command>AAA=`zenity --entry --title=&quot;Запаролить PDF&quot; --text=&quot;Введите пароль, например&quot; --entry-text=&quot;123&quot;`; cpdf -encrypt 128bit  $AAA $AAA %n -o passw_%n; exiftool -r -overwrite_original -P -all=passw_%n</command>
+	<description>Ранее: AAA=`zenity --entry --title=&quot;Запаролить PDF&quot; --text=&quot;Введите пароль, например&quot; --entry-text=&quot;123&quot;`; qpdf --encrypt $AAA $AAA 256 --  %n  passw_%n</description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>emblem-encrypted-unlocked</icon>
+	<name>Снять пароль с файла PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1696581203954268-1</unique-id>
+	<command>AAA=`zenity --entry --title=&quot;Распаролить PDF&quot; --text=&quot;Введите пароль, например&quot; --entry-text=&quot;123&quot;`; cpdf -decrypt %n owner=$AAA -o %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/a_xls.png</icon>
+	<name>PDF в XLS</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1664554430335385-1</unique-id>
+	<command>java -jar ~/.local/bin/tabula-1.0.4-jar-with-dependencies.jar --pages all %n &gt;&quot;$(basename --suffix=pdf %n)&quot;csv; unoconv -i FilterOptions=44,34,76 -f xls &quot;$(basename --suffix=pdf %n)&quot;csv &gt;&quot;$(basename --suffix=pdf %n)&quot;xls</command>
+	<description>PDF порезать на страницы!</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/html-512.png</icon>
+	<name>PDF 2 HTML</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1709535698484229-1</unique-id>
+	<command>pdftotext -htmlmeta -raw %n &quot;$(basename --suffix=pdf %n)&quot;html</command>
+	<description>pdftohtml -noframes -q -p -c  -i %n &quot;$(basename --suffix=pdf %n)&quot;html    # как вариант:  pdf2htmlex %n </description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/djvu2pdf.png</icon>
+	<name> Сжать файл PDF в DJVU</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1712294970532964-1</unique-id>
+	<command>pdf2djvu.sh %N</command>
+	<description></description>
+	<range></range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/txt.png</icon>
+	<name>PDF2TXT</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1696487858460379-18</unique-id>
+	<command>pdftotext -layout -enc UTF-8 %n  # mutool convert -o &quot;$(basename -s .pdf %n)&quot;.txt %n #  </command>
+	<description>Галку на: Другие , как вариант команда (mutool convert -o %n.txt %n)</description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>split</icon>
+	<name>Рзделить PDF по закладкам</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1735505169175993-1</unique-id>
+	<command>cpdf -split-bookmarks 0 %n -utf8 -o @B.pdf</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>unmarkasblank</icon>
+	<name>Удалить закладки из PDF</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1735541523587200-3</unique-id>
+	<command>cpdf -remove-bookmarks %n  -o  _%n; mv  _%n %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.PDF;*.pdf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>empathy</icon>
+	<name>PDF info</name>
+	<submenu>Действия с PDF</submenu>
+	<unique-id>1706614485299733-1</unique-id>
+	<command>zenity  --width 600 --height 600 --info --title=&quot;Данные PDF файла&quot; --text=&quot;$(pdfinfo %f;exiftool %f)&quot;</command>
+	<description> </description>
+	<range></range>
+	<patterns>*.pdf;*.PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Сильно сжать видео</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1660246074517849-1</unique-id>
+	<command>videosize=`zenity --entry --title=&quot;Сжать видео&quot; --text=&quot;Введите размер видео в Mb&quot; --entry-text=&quot;10&quot;`; ffmpeg -i %n  -fs &quot;$videosize&quot;M compressed_%n | zenity --progress --width=400 --height=100 --title= Сжимаю  --text  работаю.  --auto-close --pulsate; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Всё - в оптимизированный MP4</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1595147384720894-30</unique-id>
+	<command>ffmpeg -i %f -b:v 0 -crf 25 %f.mp4; rename &apos;s/.[a-z].mp4$/.mp4/gi&apos; %n.mp4 ; rename &apos;s/.[a-z][1-9].mp4$/mp4/gi&apos; %n.mp4 ; rename &apos;s/.[a-z][1-9].mp4$/mp4/gi&apos; %n.mp4 ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>object-rotate-right</icon>
+	<name>Поворот видео с Exif</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1736007741090727-1</unique-id>
+	<command>angle=`zenity --width=400 --height=100 --entry --title=&quot;Угол поворота&quot; --text=&quot;270, 180 или 90&quot; --entry-text=&quot;270&quot;`; exiftool -Rotation=&quot;$angle&quot; %n; rm %n_original</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Повернуть видео по часовой</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1595147324424267-27</unique-id>
+	<command>ffmpeg  -i %f  -vf &quot;transpose=1&quot; _%n; mv -v _%n %f ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Повернуть видео против часовой</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1595147314952184-26</unique-id>
+	<command>ffmpeg -i %f -vf &quot;transpose=2&quot; _%n; mv -v _%n %f ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>avimetaedit</icon>
+	<name>Видео - в AVI</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1622958555789170-16</unique-id>
+	<command>ffmpeg -i %f  -vcodec copy -acodec copy -f avi %n.avi; rename &apos;s/.[a-z][1-9].avi$/avi/gi&apos; %n.avi ; rename &apos;s/.[a-z][1-9].avi$/avi/gi&apos; %n.avi ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/webm.png</icon>
+	<name>Видео в WEBM</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1696487614042444-6</unique-id>
+	<command>convert-mp4-webm_4.sh %F |  zenity --progress --width=400 --height=100 --title=&quot;Процесс пошёл&quot; --text &quot;конвертирую в WEBM&quot; --auto-close --pulsate ; rename &apos;s/.[a-z].webm$/.webm/gi&apos; %n.webm ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Видео в GIF</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1595147466097350-36</unique-id>
+	<command>thunar-video-to-gif.sh -f %f %n ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Объединить все видео  MP4 или MKV в каталоге</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1667324012202917-4</unique-id>
+	<command>exten=`zenity --entry --title=&quot;Объединить видео&quot; --text=&quot;Введите формат исходных файлов mkv или mp4 или поставьте пробел для выхода&quot; --entry-text=&quot;mkv&quot;`; printf &quot;file &apos;%%s&apos;\n&quot; ./*&gt; list.txt ; ffmpeg -f concat -safe 0 -i list.txt -c copy output.$exten ; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>!!!  В отдельном каталоге</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Объединить AVI видеофайлы в ОТДЕЛЬНОЙ папке</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1667324235284923-5</unique-id>
+	<command>cat %F &gt; sum_%n &amp;&amp; mencoder -forceidx -oac copy -ovc copy sum_%n -o film_%n ; rm sum_%n ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>Делать в отдельной папке!! Сначала сжать в AVI</description>
+	<range></range>
+	<patterns>*.avi;*.AVI</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Обрезать видео и аудио</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1622962202878985-18</unique-id>
+	<command>cut_video.sh %n ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-video</icon>
+	<name>Video-2-Frames (для панорамы)</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1696487764915576-13</unique-id>
+	<command> ffmpeg -i %n -vf  fps=30 out%%02d.jpg</command>
+	<description>Галку на: Видеофайлы</description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-video-player</icon>
+	<name>Перекодировать MP4</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1610007804035519-16</unique-id>
+	<command>ffmpeg -y -i %n -c:v libx264 -c:a aac -strict experimental -tune fastdecode -pix_fmt yuv420p -b:a 192k -ar 48000 _%n</command>
+	<description>если не читается в Windows/Andriod</description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-audio-player</icon>
+	<name>Вынуть минус с видеоролика</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1674831123442890-2</unique-id>
+	<command>ffmpeg -i %F -f mp3 -ab 192000 -vn %n.mp3 ; rename &apos;s/.\S\S\S.mp3$/.mp3/gi&apos; %n.mp3 ; rename &apos;s/.[a-z].mp3$/.mp3/gi&apos; %n.mp3 ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>Как вариант: ffmpeg -i %n -q:a 0 -map a %n.mp3</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-audio-player</icon>
+	<name>МГНОВЕННО вынуть минус в m4a с видеоролика</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1675592463181916-19</unique-id>
+	<command>bash -c &apos;ffmpeg -i &quot;$0&quot; -map 0:1 -c:a copy &quot;${0%%.*}&quot;.m4a&apos; %f ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>multimedia-audio-player</icon>
+	<name>m4a &gt;&gt; MP3</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1675592480462023-20</unique-id>
+	<command>aac2mp3.sh %n ; rename &quot;s/m4a.//gi&quot; %n.mp3</command>
+	<description></description>
+	<range></range>
+	<patterns>*.m4a</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/exif2.png</icon>
+	<name>EXIF данные  в т.ч. PDF</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1672669236977558-1</unique-id>
+	<command>zenity  --width 700 --height 700 --info --title=&quot;Метаданные файла&quot; --text=&quot;$(exiftool %f)&quot;</command>
+	<description>Галка на всё, кроме &quot;Каталоги&quot;</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-wps-office.doc</icon>
+	<name>Время EXIF создания ОФИСНОГО файла</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1599420508695424-3</unique-id>
+	<command>zenity  --width 400 --height 40 --info --title=&quot;Файл создан (метаданные)&quot; --text=&quot;$(exiftool %f| grep &apos;Create Date&apos;)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.doc;*.DOC;*.docx;*.DOCX;*.xls;*.XLS;*.xlsx;*.XLSX</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>deadbeef-panel</icon>
+	<name>Скопировать EXIF DATA от первого</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1690283588075523-6</unique-id>
+	<command>exiftool -TagsFromFile %f %F; rm ./*_original </command>
+	<description>Донорский файл первым в списке</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/erase_delete_remove.png</icon>
+	<name>убрать метаданные</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1668671182718927-22</unique-id>
+	<command>exiftool -r -overwrite_original -P -all= %N;notify-send &quot;Очищено от данных!&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/exif2.png</icon>
+	<name>Редактировать exif</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1621668001340321-11</unique-id>
+	<command>java -jar ~/.local/bin/FastPhotoTagger.jar -path %d</command>
+	<description>Галка на: Изображения и Другие</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>kexi</icon>
+	<name>Изменить EXIF дату создания фото</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1630843127150571-1</unique-id>
+	<command>xdg-open https://kalkulator.pro/month-to-hour.html ; hours=`zenity --entry --title=&quot;сдвинуть время в часах&quot; --text=&quot;Введите время в часах, например -48, это 48 часов назад или +4 это 4 часа вперёд&quot; --entry-text=&quot;+48&quot;`; jhead -ta$hours %F ; mpv /usr/share/sounds/sound-icons/percussion-28.wav ; notify-send &quot;изменили дату!&quot;</command>
+	<description>https://kalkulator.pro/month-to-hour.html</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/tag_view.png</icon>
+	<name>Тэги</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1583403335700868-23</unique-id>
+	<command>multi_tag.sh %f</command>
+	<description>Действия с тэгами файлов</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/exif.png</icon>
+	<name>Поиск скрытых атрибутов в папке</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1696487673267078-9</unique-id>
+	<command>xfce4-terminal -H -e &quot;где_скрытые_аттрибуты %f&quot;</command>
+	<description>Галка на :Каталоги</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/copyright.png</icon>
+	<name>Копирайт</name>
+	<submenu>Метаданные</submenu>
+	<unique-id>1605288328296468-9</unique-id>
+	<command>exiftool -Artist=&quot;el guahiro&quot; -Copyright=&quot;©el guahiro, all rights reserved&quot; -By-line=&quot;el guahiro&quot; -Credit=&quot;el guahiro&quot; -Contact=&quot;elguahiro@gmail.com&quot; &quot;-xmp-xmprights:marked=1&quot; -overwrite_original %F</command>
+	<description>Галка на: Изображения</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>printer</icon>
+	<name>Отправить на печать</name>
+	<submenu></submenu>
+	<unique-id>1673625036328491-2</unique-id>
+	<command>thunar-print %F</command>
+	<description>Send one or multiple files to the default printer</description>
+	<range></range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>preferences-system-privacy</icon>
+	<name>Защита на удаление, chattr +a&gt;&gt;СКРЫТ</name>
+	<submenu></submenu>
+	<unique-id>1688452087239598-4</unique-id>
+	<command>gksu chattr +a %F</command>
+	<description>галку на : Каталоги</description>
+	<range></range>
+	<patterns>*</patterns>
+</action>
+<action>
+	<icon>preferences-system-privacy</icon>
+	<name>Снять защиту с каталога, файла, chattr -a&gt;&gt;&gt;СКРЫТ</name>
+	<submenu></submenu>
+	<unique-id>1605288264399019-8</unique-id>
+	<command>sh -c &quot;zenity --password | sudo -S chattr -a %F&quot;</command>
+	<description>галку на : Каталоги</description>
+	<range></range>
+	<patterns>*</patterns>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/djvu2pdf.png</icon>
+	<name>DJVU в PDF</name>
+	<submenu></submenu>
+	<unique-id>1712294978348839-2</unique-id>
+	<command>djvups %n | ps2pdf - %n.pdf  | zenity --progress --width=400 --height=100 --title=&quot;Конвертирует&quot; --text &quot;работаю.&quot; --auto-close --pulsate; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg ; find . -exec rename &quot;s/djvu.pdf/pdf/gi&quot; &quot;{}&quot; +; notify-send &quot;Получили PDF файл&quot; </command>
+	<description>Галка:изображения</description>
+	<range></range>
+	<patterns>*.DJVU;*.djvu</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/baobab-stats-icon.png</icon>
+	<name>Аналаз дискового пространства</name>
+	<submenu></submenu>
+	<unique-id>1700635106100292-1</unique-id>
+	<command>mate-disk-usage-analyzer %f</command>
+	<description>Галку на: Каталоги</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/crop_picture.png</icon>
+	<name>Обрезать картинку до соотношения A4</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667733383784627-107</unique-id>
+	<command>jhead -autorot %F ; RatioA4.sh %N ; notify-send &quot;Вписали в A4&quot; ; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>http://www.fmwconcepts.com/imagemagick/aspectcrop/index.php</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/contrast_picture.png</icon>
+	<name>Сделать скан JPG/PNG читабельным</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1617043716640033-65</unique-id>
+	<command>mkdir %d/backup ; cp %F backup; unsharp_mask_5_methods.sh %F ; exiftool -r -overwrite_original -P -all= %F ; notify-send &quot;Значительно лучше!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg ; sleep 60 ; trash-put backup </command>
+	<description>более экстремально: смени часть команды на -unsharp 0x16+2+0 </description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/rigt-blue.png</icon>
+	<name>Повернуть картинку</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1673723304296583-4</unique-id>
+	<command>touch -r %f .1 ;AAA=`zenity --entry --title=&quot;поворот документа&quot; --text=&quot;Угол поворота (по часовой от 0 до 180, против часовой - с минусом), например&quot; --entry-text=&quot;-0.5&quot;`; mogrify -rotate $AAA -gravity center -density 300 %F ; touch -r .1 %f ; rm ./ .1 ; notify-send &quot;Так годится?&quot; ; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*.jpg;*.JPG;*.jpeg;*.JPEG;*.png;*.PNG</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/Jpeg-2-Pdf.png</icon>
+	<name>Картинки ---&gt; в PDF в ЛЮБОЙ формат A4, A3, ...A0 или в родной размер</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1673002463463176-10</unique-id>
+	<command>papersize=`zenity --entry --title=&quot;Картинки в PDF&quot; --text=&quot;Введите формат A4,A3,A2,A1,A0, например -S A4, или поставьте пробел (родной размер)&quot; --entry-text=&quot;-S A4&quot;`; img2pdf -o %n.pdf $papersize --auto-orient %F | zenity --progress --width=400 --height=100 --title= Склеиваем в  PDF  --text  работаю.  --auto-close --pulsate; exiftool  -overwrite_original -all= %n.pdf; touch -r %n %n.pdf ; rename &quot;s/png.pdf|jpg.pdf|jpeg.pdf|JPG.pdf|JPEG.pdf/pdf/gi&quot; %n.pdf ; notify-send &quot;склеили в PDF файл&quot; ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/Jpeg-2-Pdf.png</icon>
+	<name>JPG 2 PDF высоты A3</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667593020475197-100</unique-id>
+	<command>img2pdf %N --auto-orient --pagesize x842 --output %n.pdf ; rename &quot;s/png.pdf|jpg.pdf|jpeg.pdf|JPG.pdf|JPEG.pdf/pdf/gi&quot; %n.pdf </command>
+	<description>Размеры в пикселях здесь https://codificator.ru/size/paper-a.html</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/image-cutter.png</icon>
+	<name>Разрезать картинки на 2 3 4 части</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1636440861297934-1</unique-id>
+	<command>cut_picture3methods.sh %N; mpv /usr/share/sounds/sound-icons/percussion-28.wav ; notify-send &quot;Разрезали картинку&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/webp.png</icon>
+	<name>Картинки в WEBP</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1611126624346010-10</unique-id>
+	<command>picture2webp.sh %N;  notify-send &quot;Закончено!&quot;</command>
+	<description>галку на :  Изображения</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/smallpicrure.png</icon>
+	<name>Сжать картинку (без ухудшения)</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1663408413870955-4</unique-id>
+	<command>mkdir %d/backup ; cp %F backup; smaller-picrure_size_3methods.sh %F ; compare_filesize2.pl  ./backup/%n  %n | festival --tts --language russian ;  notify-send &quot;сжали картинку&quot; ; sleep 60 ; trash-put backup</command>
+	<description>с озвучкой процента сжатия</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/collage2.png</icon>
+	<name>Трюки с Фотографиями и иконками</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667195082965567-1</unique-id>
+	<command>16_Image_Tricks.sh %N | zenity --progress --width=400 --height=100 --title= Ретро-эффект  --text  работаю.  --auto-close --pulsate; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg </command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>icon</icon>
+	<name>PNG 2 SVG</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1716455625842812-1</unique-id>
+	<command>png2svg %n&gt;&quot;$(basename --suffix=png %n)&quot;svg</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.png;*.PNG</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/red_music.png</icon>
+	<name>Конвертировать ВСЁ в MP3</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1595145104581848-1</unique-id>
+	<command>any2mp3.sh %F |  zenity --progress --width=400 --height=100 --title=&quot;Процесс пошёл&quot; --text &quot;конвертирую в MP3.&quot; --auto-close --pulsate ; notify-send &quot;Готово!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description></description>
+	<range></range>
+	<patterns>*.mkv;*.MKV</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/red_music.png</icon>
+	<name>Объединить mp3</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1673466735358350-12</unique-id>
+	<command>bash -c &quot;cat  %N&gt; final_%n&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/red_music.png</icon>
+	<name>Сжать аудиофайл</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1673466781543045-13</unique-id>
+	<command>ffmpeg -i %n -ab 6400 %n.mp3; rename &apos;s/\..*\./_compr./gi&apos; %n.mp3</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/Music.png</icon>
+	<name>Проиграть музыку в цикле</name>
+	<submenu></submenu>
+	<unique-id>1588951391676716-2</unique-id>
+	<command>mpv --loop %f</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/cinema.png</icon>
+	<name>Видео мультиконвертер</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1674325517162382-37</unique-id>
+	<command>filetype=$(zenity --list --height=300 --title=&quot;&quot; --text=&quot;Convert film with ffmpeg:\n\nApplies standard settings\nfor selected filetype:&quot; --column=&quot;.&quot; &quot;mp4&quot; &quot;mkv&quot; &quot;ogv&quot; &quot;mov&quot; &quot;flv&quot; &quot;avi&quot; &quot;wmv&quot;); if [ &quot;$filetype&quot; != &quot;&quot; ]; then parallel -j 1 ffmpeg -i &apos;{}&apos; &apos;{.}.&apos;$filetype ::: %F &amp;&amp; notify-send -t 9999999 &quot;Convertion to $filetype is done!&quot; || { zenity --error --text=&quot;An error occurred!\n\nSO SAD!&quot;; } ; fi</command>
+	<description>https://github.com/Skrimpton/thunar-multiconverter</description>
+	<range></range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>easytag</icon>
+	<name>Прекодировка тэгов аудиофайлов  в UTF-8</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1621605495336825-1</unique-id>
+	<command>mid3iconv -e CP1251 %F</command>
+	<description>галку на :  аудиофайлы</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>media-view-subtitles</icon>
+	<name>Media Info</name>
+	<submenu>Действия с видео и аудио</submenu>
+	<unique-id>1733669355270962-1</unique-id>
+	<command>thunar-media-info.sh -f %n</command>
+	<description>Посмотреть метаданные</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>appimagepool</icon>
+	<name>Отбелить текстовую страницу</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667589299734560-81</unique-id>
+	<command>percent=`zenity --entry --title=&quot;Сила отбеливания&quot; --text=&quot;, 12 - чуть-чуть, 25 - норм, 50 сильно&quot; --entry-text=&quot;25&quot;`; color1=`zenity --entry --title=&quot;Убрать цветную подложку документа&quot; --text=&quot;в Gimp или Gpick узнать цвет шестнадцатеричный код цвета&quot; --entry-text=&quot;f6edde&quot;`; color2=`zenity --entry --title=&quot;На какой цвет меняем&quot; --text=&quot;Обычно белый фон&quot; --entry-text=&quot;FFFFFF&quot;`; convert %n -fuzz &quot;$percent&quot;%% -fill &quot;#$color2&quot;  -opaque &quot;#$color1&quot; %n</command>
+	<description>В принципе меняет любой цвет на любой</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/crop.png</icon>
+	<name>Обрезать края картинки</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1660458684902938-3</unique-id>
+	<command>touch -r %f .1 ; shave=`zenity --entry --title=&quot;обрезать картинку&quot; --text=&quot;Введите формат процент обрезки с каждой стороны, например 5 (это 10 с двух), или поставьте пробел (родной размер)&quot; --entry-text=&quot;5&quot;`; mogrify -shave $shave%% %F;  mpv /usr/share/sounds/sound-icons/percussion-28.wav ; touch -r .1 %f ; rm ./ .1 ;notify-send &quot;Обрезали картинки&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/pano.png</icon>
+	<name>Сшить панораму</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1628055365931813-1</unique-id>
+	<command>cp /$HOME/OpenPano-master/src/config.cfg &quot;$PWD&quot; ; image-stitching %F | zenity --progress --width=300 --height=100 --title=&quot;Сшиваю панораму&quot; --text &quot;...надо было ровней камеру держать!&quot; --auto-close --pulsate ;  touch -r %f out.jpg ; mv out.jpg pano_%n &amp;&amp; rm config.cfg</command>
+	<description></description>
+	<range></range>
+	<patterns>IMG*;WP*;image*;out*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/home/user/Cloud@Mail.Ru/Программы Убунту/el_guahiro/pano.png</icon>
+	<name>Обрезать фреймы панорамы для сшивки</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1605291390131166-36</unique-id>
+	<command>crop_picture.sh %F</command>
+	<description>Галку на:Изображения</description>
+	<range></range>
+	<patterns>IMG*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/pano_.png</icon>
+	<name>Исправить панораму</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1626955915765014-1</unique-id>
+	<command>improve_pano_6_methods.sh %n  | zenity --progress --width=500 --height=100 --title=&quot;идёт интерактивное улучшение&quot; --text &quot;работаю.&quot; --auto-close --pulsate ; notify-send &quot;Закончено!&quot;</command>
+	<description>Галку на Изображения</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/slideshow2.png</icon>
+	<name>Автоповорот картинки с текстом</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1673724277082458-5</unique-id>
+	<command>textdeskew %n %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/AAA.png</icon>
+	<name>Оставить только кадастровые границы&gt;&gt;СКРЫТО</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1674824435866049-2</unique-id>
+	<command>convert %n -matte \( +clone -fuzz 30%% -transparent red \) -compose DstOut -composite only_red.png</command>
+	<description>Полученное совмещаем со скрином с ПКК без слоёв</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>rotation-locked-landscape</icon>
+	<name>Портрет Или Альбом</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1735752682811624-1</unique-id>
+	<command>sort_Portrait_or_Landscape_images.sh %N</command>
+	<description>Сортировует по двум папкам</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/photo-manager.png</icon>
+	<name>Красивый коллаж, 16 или 20 фоток</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1585815654113634-12</unique-id>
+	<command>mkdir %d/backup ; resize_n_convert.sh %N ; mv %F backup; convert *.png +polaroid %%d.PNG; montage *.PNG -mode Concatenate -tile 4x5 collage.jpg ; rm . *.png ; rm . *.PNG</command>
+	<description></description>
+	<range></range>
+	<patterns>-</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/convert-image.png</icon>
+	<name>Изменить размер и сконвертировать всё в PNG, JPG, PDF</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667734309000529-111</unique-id>
+	<command>mkdir %d/backup ; resize_n_convert.sh %N ; mv %F backup;  mpv /usr/share/sounds/sound-icons/percussion-28.wav ; notify-send &quot;Закончено!&quot;; sleep 60 ; trash-put backup</command>
+	<description></description>
+	<range></range>
+	<patterns>*.jpeg;*.JPEG;*.jpg;*.JPG;*.png;*.PNG;*.tif;*.tiff;*.TIF;*.webp</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>cs-date-time</icon>
+	<name>Присвоить дату создания фото по шифру в названии</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1674325287085375-36</unique-id>
+	<command>webp_photo_date_creation.sh %N</command>
+	<description>Можно получить из exif : exiv2 -T rename %n</description>
+	<range></range>
+	<patterns>*.webp;*.WEBP;*IMG*;*PANO*;*pano*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Сравнить картинки</name>
+	<submenu>Сравнить файлы</submenu>
+	<unique-id>1672167956763239-1</unique-id>
+	<command>convert -delay 50 %N -loop 0 /tmp/%n.gif ; nomacs /tmp/%n.gif</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/exif.png</icon>
+	<name>Установить дату фото &lt; из EXIF</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667588021473742-68</unique-id>
+	<command>jhead -ft %N</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>com.github.bharatkalluri.gifup</icon>
+	<name>Картинки в GIF</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1675836078567024-1</unique-id>
+	<command>convert -delay 90 -loop 0  -deconstruct %N %n.gif ; rename &apos;s/\.jpg.gif/.gif/gi&apos; %n.gif </command>
+	<description>Предварительно выровняй картинки под ОДИН размер</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<image-files/>
+</action>
+<action>
+	<icon>2gis</icon>
+	<name>Местоположение фотосъёмки</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1673646566691536-2</unique-id>
+	<command>geolokation.sh %n</command>
+	<description>или : eo-exif_el.sh %n</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>accessories-character-map</icon>
+	<name>Водяной знак для всех изображений</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1667582080037680-26</unique-id>
+	<command>simply_watermark_all_in_folder.sh %d</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+</action>
+<action>
+	<icon>color-mode-invert-image</icon>
+	<name>Нормализация картинки</name>
+	<submenu>Действия с изображениями</submenu>
+	<unique-id>1719578850198964-2</unique-id>
+	<command>mogrify -resize 200%% -modulate 110,110,100 -median 1 -blur 0x0.4 -unsharp 0x12+2+0  -resize 50%% %n</command>
+	<description>mogrify -resize 400%% -modulate 110,110,100 -median 1 -blur 0x0.4 -unsharp 0x12+2+0  -resize 25%% %n</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>changes-prevent</icon>
+	<name>Зашифровать файлы, mcrypt</name>
+	<submenu></submenu>
+	<unique-id>1696487628673729-7</unique-id>
+	<command>key=`zenity --entry --title=&quot;зашифровать файл&quot; --text=&quot;Введите пароль, например&quot; --entry-text=&quot;123&quot;`;if [ $? = 0 ];then for file in %F;do mcrypt  &quot;$file&quot; -k $key ;done;fi; trash-put %F</command>
+	<description>галки везде</description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>changes-allow</icon>
+	<name>Расшифровать файлы, mcrypt</name>
+	<submenu></submenu>
+	<unique-id>1685446915349777-6</unique-id>
+	<command>key=`zenity --entry --title=&quot;расшифровать файлы&quot; --text=&quot;Введите пароль, например&quot; --entry-text=&quot;123&quot;`;if [ $? = 0 ];then for file in %F;do mcrypt -k $key -d &quot;$file&quot; ;done;fi; rm %F</command>
+	<description></description>
+	<range></range>
+	<patterns>*.nc</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/find_n_replace.png</icon>
+	<name>Найти и заменить в названиях файлов</name>
+	<submenu></submenu>
+	<unique-id>1589122499251116-14</unique-id>
+	<command>find_n_replace2.sh %f</command>
+	<description>shopt -s nocasematch для регистронезавис. замены</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>go-up</icon>
+	<name>Скопировать файл во все поддиректории</name>
+	<submenu></submenu>
+	<unique-id>1677484697931807-1</unique-id>
+	<command>find ./ -type d -exec cp  -ia %f {} \;</command>
+	<description></description>
+	<range></range>
+	<patterns>folder.jpg;.hidden;.*.docx;*.doc</patterns>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/radio.png</icon>
+	<name>Проиграть радио плейлист</name>
+	<submenu></submenu>
+	<unique-id>1611329314284571-16</unique-id>
+	<command>xfce4-terminal -H -e &quot;mpv --playlist=%f&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.pls</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>fontforge</icon>
+	<name>Font Name</name>
+	<submenu>Шрифты</submenu>
+	<unique-id>1685403028843495-8</unique-id>
+	<command>zenity  --width 400 --height 40 --info --title=&quot;Название шрифта&quot; --text=&quot;$(exiftool %f| grep &apos;Script Font Name&apos;)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.ttf;*.TTF;*.OTF;*.otf</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/tipograph.png</icon>
+	<name>Переименовать шрифт TTF в родовое имя</name>
+	<submenu>Шрифты</submenu>
+	<unique-id>1685403789225172-11</unique-id>
+	<command>exiftool -m -s &apos;-filename&lt;${PostScriptFontName-en-US}.ttf&apos; %N</command>
+	<description></description>
+	<range></range>
+	<patterns>*.ttf;*.TTF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/tipograph.png</icon>
+	<name>Переименовать шрифт OTF в родовое имя</name>
+	<submenu>Шрифты</submenu>
+	<unique-id>1685403772449165-10</unique-id>
+	<command>exiftool -m -s &apos;-filename&lt;${PostScriptFontName-en-US}.otf&apos; %N</command>
+	<description></description>
+	<range></range>
+	<patterns>*.otf;*.OTF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>edit-delete</icon>
+	<name>Удалить файлы и папки по маске в названии</name>
+	<submenu></submenu>
+	<unique-id>1705404303795394-12</unique-id>
+	<command>delfile=`zenity --entry --title=&quot;Удаляем файлы по названию&quot; --text=&quot;Введите название или его часть, например&quot; --entry-text=&quot;@вместо этого@&quot;`;  find . -iname &quot;*&quot;$delfile&quot;*&quot; -exec trash-put &apos;{}&apos; +;  notify-send &quot;файлы удалены&quot;</command>
+	<description>delfile=`zenity --entry --title=&quot;Удаляем файлы по названию&quot; --text=&quot;Введите название или его часть, например&quot; --entry-text=&quot;@вместо этого@&quot;`;  find . -iname &quot;*&quot;$delfile&quot;*&quot; -exec rm -rf &apos;{}&apos; +;   notify-send &quot;файлы удалены&quot;</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>edit-delete</icon>
+	<name>Удалить файлы по маске в содержании файла</name>
+	<submenu></submenu>
+	<unique-id>1660627548107574-9</unique-id>
+	<command>word=`zenity --entry --title=&quot;Удалить файлы, содержащие текст&quot; --text=&quot;Напишите слово, или ничего не пишите, чтобы выйти&quot; --entry-text=&quot;&quot;`; cd %n ;  rg -l $word | xargs -d &apos;\n&apos; rm -f  ; notify-send &quot;Удалили файлы&quot; </command>
+	<description>удаляет файлы, содержащие какое-либо слово</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>brackets</icon>
+	<name>Права: только чтение&gt;&gt;СКРЫТ</name>
+	<submenu></submenu>
+	<unique-id>1585817050658703-21</unique-id>
+	<command>sh -c &quot;zenity --password | sudo chmod -R 444 %F&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>-</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>brackets</icon>
+	<name>Права: чтение, запись&gt;&gt;Скрыт</name>
+	<submenu></submenu>
+	<unique-id>1667550013457167-18</unique-id>
+	<command>sh -c &quot;zenity --password | sudo -S chmod -R 755 %N&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>-</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>preferences-system-time</icon>
+	<name>Скопировать время с первого файла</name>
+	<submenu></submenu>
+	<unique-id>1628333207091010-1</unique-id>
+	<command>touch -r %f %F</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder-saved-search</icon>
+	<name>25 последних файлов в папке</name>
+	<submenu></submenu>
+	<unique-id>1696487742011530-11</unique-id>
+	<command>zenity  --width 1400 --height 700 --info --title=&quot;Последних 25&quot; --text=&quot;$(find %f -type f -printf &apos;%%TY-%%Tm-%%Td %%TT %%p\n&apos; | sort -r | head -25)&quot;; zenity  --width 1400 --height 700 --info --title=&quot;Последних 25&quot; --text=&quot;$(find %f -type d -printf &apos;%%TY-%%Tm-%%Td %%TT %%p\n&apos; | sort -r | head -25)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/24 white/important_devices.png</icon>
+	<name>Фотки в смартфон</name>
+	<submenu></submenu>
+	<unique-id>1603214539374782-1</unique-id>
+	<command>adb push %F &apos;/sdcard/DCIM/PANO&apos; </command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/24 white/important_devices.png</icon>
+	<name>Рингтон в смартфон</name>
+	<submenu></submenu>
+	<unique-id>1587225242349649-28</unique-id>
+	<command>adb push %F &apos;/sdcard/Ringtones&apos; </command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>libreoffice-writer</icon>
+	<name>Экстремально сжать DOC, DOCX, ODT</name>
+	<submenu></submenu>
+	<unique-id>1708006846990495-1</unique-id>
+	<command>bash -c &quot;source compressDOC-ODT.sh %f&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.docx;*.doc;*.DOCX;*.DOC;*.ODT;*.odt;*.pptx</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>libreoffice-writer</icon>
+	<name>Чуть поджать DOC, DOCX, ODT</name>
+	<submenu></submenu>
+	<unique-id>1604681850749699-3</unique-id>
+	<command>bash -c &quot;source lite-compressDOC-ODT.sh %f&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*.docx;*.doc;*.DOCX;*.DOC;*.ODT;*.odt;*.pptx</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/textsearch.png</icon>
+	<name>Предпросмотр файлов</name>
+	<submenu></submenu>
+	<unique-id>1671382031812823-6</unique-id>
+	<command>xfce4-terminal -H -e &quot;view3.1.sh %N |tr -d &quot;\r\n&quot;&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/collage3.png</icon>
+	<name>соединить текстовые файлы</name>
+	<submenu></submenu>
+	<unique-id>1674068328537020-3</unique-id>
+	<command>cat %N &gt; e-mail_%n ; sleep 20 ; trash-put %N</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/documentconverter.png</icon>
+	<name>Конвертер офисных файлов</name>
+	<submenu></submenu>
+	<unique-id>1681537454278214-2</unique-id>
+	<command>extent=`zenity --entry --title=&quot;Сконвертировать в другой формат&quot; --text=&quot;Введите формат например pdf odt rtf или поставьте пробел (ничего не делать)&quot; --entry-text=&quot;pdf&quot;`;  libreoffice --headless --convert-to &quot;$extent&quot; %n | zenity --progress --width=400 --height=100 --title= Конвертирую в $extent  --text  работаю.  --auto-close --pulsate; notify-send &quot;Готово!&quot; ; notify-send &quot;Готово!&quot;; touch -r %n  &quot;$(ls -Art | tail -n 1)&quot; ; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>в любой формат, включая ODT, RTF, DOC, PDF</description>
+	<range></range>
+	<patterns>*.docx;*.doc;*.DOCX;*.DOC;*.ODT;*.odt;*.xls;*.XLS;*.xlsx;*.XLSX;*.ods;*.ODS;*.rtf;*.RTF;*.001</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>view-media-playlist</icon>
+	<name>Перечень файлов в папке</name>
+	<submenu></submenu>
+	<unique-id>1636067678517082-1</unique-id>
+	<command>tree --du -h&gt;&apos;Перечень файлов в папке.txt&apos;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>kfoldersync</icon>
+	<name>Rsync test</name>
+	<submenu></submenu>
+	<unique-id>1731094103942967-1</unique-id>
+	<command>rsync -avutH --delete %n  &quot;$(zenity --file-selection --directory --width=900 --height=900 --title=&quot;Выбери папку&quot;)&quot; |zenity --progress --width=400 --height=100 --title=&quot;Идет синхронизация&quot; --text &quot;Не отключать внешний носитель!&quot; --auto-close --pulsate; notify-send &quot;Синхронизация закончена, можете отключить внешний носитель&quot; ; mpv /home/user/Музыка/iphone_alarm_clock.mp3</command>
+	<description>с сохранением хардлинков</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/record.png</icon>
+	<name>Записать видео-скринкаст</name>
+	<submenu></submenu>
+	<unique-id>1629492064036057-6</unique-id>
+	<command>xfce4-terminal -H -e &apos;ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 25  -i :0.0 -vcodec libx264 -pix_fmt yuv420p -preset ultrafast -crf 0 -threads 0 -acodec pcm_s16le -y &apos;$(date +%%F_%%H-%%M)&apos;_screencast.mkv&apos;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/bash.png</icon>
+	<name>Перекодировать TXT CSV файл</name>
+	<submenu></submenu>
+	<unique-id>1674325609436553-38</unique-id>
+	<command>enconv %N</command>
+	<description></description>
+	<range></range>
+	<patterns>*.txt;*.TXT;*.csv;*.htm</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>go-top</icon>
+	<name>ВСЕ файлы переместить в эту папку из подпапок</name>
+	<submenu></submenu>
+	<unique-id>1617380031855910-1</unique-id>
+	<command>zenity --question --text=&quot;ВЫ УВЕРЕНЫ??\ ДЕЙСТВИЕ НЕОБРАТИМО!!!&quot;  --ok-label=&quot;уверен&quot;  --cancel-label=&quot;выйти!&quot;  ; case $? in   0) find . -mindepth 2 -type f -exec mv &quot;{}&quot; . \;; find . -type d -empty -delete  ;; 1)exit o  ;; esac</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/word.png</icon>
+	<name>TXT 2 DOCX</name>
+	<submenu></submenu>
+	<unique-id>1696587501085651-3</unique-id>
+	<command>sed -i &apos;s/[^[:print:]]//&apos; %n ; sed -i -r &apos;s/\xC2\xA0/ /g&apos; %n; sed -i -r &apos;s/^[  \t]*|[ \t]*$//&apos; %n ; sed -i -r &apos;s/  */ /g&apos; %n ; sed -i -r &apos;/^\s*$/d&apos; %n ; sed -i -r -z &apos;s/[.]\n|[;]\n|[:]\n|[?]\n|[!]\n/&amp;♫/g&apos; %n; sed -i -r &apos;s/^[0-9]|^[а-я]\)|^[-] /♫&amp;/g&apos; %n ; sed -i -r -z &apos;s/\n/ /g&apos; %n ; sed -i -r -z &apos;s/♫/\n/g&apos; %n ; sed -i -r &apos;/^\s*$/d&apos; %n ; sed -i -r &apos;s/^[  \t]*//;s/[ \t]*$//&apos; %n ; sed -i -r  &apos;s/[0-9]$|[0-9]\.$/&amp;♫/g&apos; %n ; sed -i -r -z &apos;s/♫\n|♫\r/ /g&apos; %n ; sed -i &apos;s/--|—/-/gi&apos; %n ; sed -i &apos;s/  */ /gi&apos; %n ; abiword --to=docx %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/txt.png</icon>
+	<name>DOC(DOCX) 2 TXT</name>
+	<submenu></submenu>
+	<unique-id>1667587682150491-65</unique-id>
+	<command>abiword --to=txt %n</command>
+	<description>Галку на : Другие файлы</description>
+	<range></range>
+	<patterns>*.docx;*.DOCX;*.doc;*.DOC</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/Глаз4.png</icon>
+	<name>Контрольная сумма</name>
+	<submenu></submenu>
+	<unique-id>1569140029707308-10</unique-id>
+	<command>checksum.sh %f</command>
+	<description>md5sum</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/html-512.png</icon>
+	<name>HTML 2 TXT</name>
+	<submenu></submenu>
+	<unique-id>1696487851820398-17</unique-id>
+	<command>lynx --dump %f&gt;&quot;$(basename --suffix=html %n)&quot;txt; sed -i &quot;/^\s*$/d&quot; &quot;$(basename --suffix=html %n)&quot;txt ; sed -i &quot;s/  */ /g&quot;  &quot;$(basename --suffix=html %n)&quot;txt ; sed -i &apos;/^[[:space:]]*$/d&apos; &quot;$(basename --suffix=html %n)&quot;txt</command>
+	<description>Галку на: Другие , как вариант команда (mutool convert -o %n.txt %n) или (html2text -o %n.txt %n)</description>
+	<range></range>
+	<patterns>*.html</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/html-512.png</icon>
+	<name>TXT to HTML</name>
+	<submenu></submenu>
+	<unique-id>1696587496117598-2</unique-id>
+	<command>cmark --hardbreaks --to html %n &gt; &quot;$(basename --suffix=txt %n)&quot;.html</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/html-512.png</icon>
+	<name>Упростить HTML</name>
+	<submenu></submenu>
+	<unique-id>1701174955858251-2</unique-id>
+	<command>lynx --dump %f&gt;%n.txt ; sed -i &quot;/^\s*$/d&quot; %n.txt  ; sed -i &quot;s/  */ /g&quot; %n.txt ; sed -i &apos;/^[[:space:]]*$/d&apos; %n.txt; sed -i -e &quot;/(*Thread\|Description\|rtf\|RTF)/Id&quot; %n.txt ; sed -i &apos;\~//~d&apos; %n.txt ; sed -i &quot;s/ To\: / Кому: /gi&quot; %n.txt ; sed -i &quot;s/ From\: / От кого\: /gi&quot; %n.txt ; sed -i &quot;s/ Cc\: / Копия: /gi&quot; %n.txt ;  sed -i &quot;s/ Subject\: / Тема письма: /gi&quot; %n.txt ; cmark --hardbreaks --to html %n.txt &gt; &quot;$(basename --suffix=txt %n)&quot;.html; mv %n.html %n; rm %n.txt</command>
+	<description>упрощает e-mail, извлечённый из корпоративного Outlook</description>
+	<range></range>
+	<patterns>*.html;*.HTML</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/csv_logo.png</icon>
+	<name>CSV 2 XLS</name>
+	<submenu></submenu>
+	<unique-id>1667587298312989-60</unique-id>
+	<command>unoconv -i FilterOptions=44,34,76 -f xls %n &gt;&quot;$(basename --suffix=csv %n)&quot;xls</command>
+	<description>Галку на : текстовые</description>
+	<range></range>
+	<patterns>*.csv;*.CSV</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/windows.png</icon>
+	<name>Проверка недопустимых имён файлов в папке</name>
+	<submenu>Исправляем имена файлов для Windows</submenu>
+	<unique-id>1641473188228105-8</unique-id>
+	<command>zenity  --width 800 --height 800 --info --title=&quot;Файлы с недопустимыми в Win именами&quot; --text=&quot;$(find &quot;$PWD&quot; -name &apos;*[&lt;&gt;:/\\|?*]*&apos; -o -name &apos;*[ \.]&apos;)&quot;</command>
+	<description>Поставить  галки везде</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/windows.png</icon>
+	<name>Исправить имена для Windows</name>
+	<submenu>Исправляем имена файлов для Windows</submenu>
+	<unique-id>1660126069787793-11</unique-id>
+	<command>saniarize_for_win.sh %f</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/windows.png</icon>
+	<name>Исправляет имена выбранных файлов</name>
+	<submenu>Исправляем имена файлов для Windows</submenu>
+	<unique-id>1735741108696297-1</unique-id>
+	<command>fixname.sh %N</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>mail</icon>
+	<name>Распаковать сообщение MSG</name>
+	<submenu></submenu>
+	<unique-id>1717045882248657-1</unique-id>
+	<command>/opt/msg2txt/bin/msg2txt %n; sed -i &quot;/^\s*$/d&quot; %f ; sed -i &quot;s/  */ /g&quot; &quot;$(basename --suffix=msg %n)&quot;txt ; sed -i &apos;/^[[:space:]]*$/d&apos; &quot;$(basename --suffix=msg %n)&quot;txt; unoconv --format=html &quot;$(basename --suffix=msg %n)&quot;txt; rm &quot;$(basename --suffix=msg %n)&quot;txt; mv &quot;$(basename --suffix=msg %n)&quot;html &quot;$(basename --suffix=.msg %n)&quot;-att; rm %n</command>
+	<description>на базе msg2txt</description>
+	<range>*</range>
+	<patterns>*.msg;*.MSG</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>/usr/share/icons/el_guahiro/rar.png</icon>
+	<name>Сделать составной RAR архив 13M или 39M</name>
+	<submenu></submenu>
+	<unique-id>1667591137064555-89</unique-id>
+	<command>size=`zenity --width=400 --height=100 --entry --title=&quot;Размер части архива&quot; --text=&quot;13 для почты, 39 для ЕАСД&quot; --entry-text=&quot;13&quot;`; rar a -m5 -v&quot;$size&quot;M -R %n.rar %N</command>
+	<description>если в zip: zip -r -s 13M %n.zip %n</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Сравнить файлы или каталоги, MELD</name>
+	<submenu>Сравнить файлы</submenu>
+	<unique-id>1685446647324165-4</unique-id>
+	<command>meld %F</command>
+	<description>Галка на: Каталоги, Текстовые файлы</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Сравнить два PDF</name>
+	<submenu>Сравнить файлы</submenu>
+	<unique-id>1667740246598442-150</unique-id>
+	<command>diff-pdf --view -m %N</command>
+	<description>PdfDiff.sh %N #не грузит большие</description>
+	<range></range>
+	<patterns>*.pdf;*PDF</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>ОДИНАКОВЫЕ ЛИ файлы</name>
+	<submenu>Сравнить файлы</submenu>
+	<unique-id>1671128832191237-8</unique-id>
+	<command>zenity  --width 200 --height 30 --info --title=&quot;Сравнение файлов&quot; --text=&quot;$(cmp -s %F &amp;&amp; echo &apos;Файлы идентичны&apos; || echo &apos;Файлы разные&apos;)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>symbol-bigger</icon>
+	<name>20 самых больших папок и файлов</name>
+	<submenu></submenu>
+	<unique-id>1715956587547502-1</unique-id>
+	<command>zenity  --width 600 --height 600 --info --title=&quot;5 самых больших папок&quot; --text=&quot;$(du -aBM 2&gt;/dev/null | sort -nr | head -n 20 | more)&quot;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>document-edit-sign-encrypt</icon>
+	<name>Encrypt &amp; Decrypt Files</name>
+	<submenu></submenu>
+	<unique-id>1672818385285598-7</unique-id>
+	<command>thunar-openssl-encrypt-decrypt.sh -f %n ; rename &apos;s/\.enc.dec//gi&apos; %n.dec</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>edit-download</icon>
+	<name>Скачать всё со страницы сюда </name>
+	<submenu></submenu>
+	<unique-id>1715955217325064-2</unique-id>
+	<command>httrack &quot;$(xsel -bi)&quot; --max-rate=1000000000 --sockets=50 | zenity --progress --width=400 --height=100 --title= Скачиваю  --text  работаю...  --auto-close --pulsate; notify-send &quot;Загрузка завершена!&quot;; mpv /usr/share/sounds/muchcacha_night/stereo/network-connectivity-established.ogg</command>
+	<description>--max-rate=1000000000 --sockets=50 --disable-security-limits --display</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>applications-internet</icon>
+	<name>Открыть Windows URL ссылку</name>
+	<submenu></submenu>
+	<unique-id>1670104421263948-12</unique-id>
+	<command>grep -i url=&quot;*&quot; %f | cut -b 5- | xargs exo-open --launch WebBrowser</command>
+	<description></description>
+	<range></range>
+	<patterns>*.url</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>code-context</icon>
+	<name>Поиск и замена в sh и desktop файлах КАТАЛОГА</name>
+	<submenu>Хакерский поиск и замена в системе</submenu>
+	<unique-id>1667740620785491-158</unique-id>
+	<command>a=`zenity --entry --title=&quot;Что меняем&quot; --text=&quot;запишите сюда&quot; --entry-text=&quot;бла бла бла&quot;`; b=`zenity --entry --title=&quot;На что меняем&quot; --text=&quot;запишите сюда&quot; --entry-text=&quot;сюда&quot;`; rpl -iqR &quot;$a&quot; &quot;$b&quot; *.sh ; rpl -iqR &quot;$a&quot; &quot;$b&quot; *.desktop</command>
+	<description>Для конфигурирования файлов</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>searching</icon>
+	<name>Поиск (rpl) и замена текста в файлах КАТАЛОГА</name>
+	<submenu>Хакерский поиск и замена в системе</submenu>
+	<unique-id>1715964723086279-1</unique-id>
+	<command>a=`zenity --entry --title=&quot;Что меняем&quot; --text=&quot;запишите сюда&quot; --entry-text=&quot;бла бла бла&quot;`; b=`zenity --entry --title=&quot;На что меняем&quot; --text=&quot;запишите сюда&quot; --entry-text=&quot;сюда&quot;`; rpl -iqR &quot;$a&quot; &quot;$b&quot; *</command>
+	<description>Для всех файлов, ОСТОРОЖНО</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>x-office-document</icon>
+	<name>Все бинарные в КАТАЛОГЕ - в *.txt </name>
+	<submenu></submenu>
+	<unique-id>1696487690139121-10</unique-id>
+	<command>find . -type f ! -name &quot;*.*&quot; -print0 | xargs -0  rename &apos;s/$/.txt$1/gi&apos; {} \;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>svgcleaner</icon>
+	<name>Оптимизировать SVG</name>
+	<submenu></submenu>
+	<unique-id>1717149028138347-2</unique-id>
+	<command>/home/user/.local/bin/svgcleaner_linux_x86_64_0.9.5/svgcleaner %n _%n; mv _%n %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.SVG;*.svg</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>svgcleaner-gui</icon>
+	<name>Редактировать SVG</name>
+	<submenu></submenu>
+	<unique-id>1717149698680981-3</unique-id>
+	<command>/home/user/.local/bin/tksvgpaint_linux64 -lang ru -file %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.SVG;*.svg</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>preferences-system-time</icon>
+	<name>Время создания из файла из EXIF</name>
+	<submenu></submenu>
+	<unique-id>1717579258489835-1</unique-id>
+	<command>zenity  --width 400 --height 40 --info --title=&quot;Время создания (метаданные)&quot; --text=&quot;$(exiftool %f| grep &apos;Create Date&apos;)&quot;</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>imagewriter</icon>
+	<name>Картинку в эту папку</name>
+	<submenu></submenu>
+	<unique-id>1733682317990037-2</unique-id>
+	<command>xclip -o -selection clipboard -t image/png &gt; &quot;$PWD&quot;/&quot;$clip_`date +%%c`.png&quot;</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Размыть backgund (test)</name>
+	<submenu></submenu>
+	<unique-id>1734720562013714-1</unique-id>
+	<command>convert %n -fill none -fuzz 1%% -draw &apos;matte 0,0 floodfill&apos; -flop  -draw &apos;matte 0,0 floodfill&apos; -flop %n.png</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>2 OGG</name>
+	<submenu></submenu>
+	<unique-id>1736014274437848-2</unique-id>
+	<command>anytoogg.sh %N; echo &quot;Выполнено&quot; | festival --tts --language russian</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+</action>
+</actions>
