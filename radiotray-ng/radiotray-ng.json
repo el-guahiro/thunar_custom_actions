@@ -1,0 +1,10 @@
+{
+	"bookmarks" : "/home/user/.config/radiotray-ng/bookmarks.json",
+	"last-station" : "\u0420\u043e\u043c\u0430\u043d\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0448\u0430\u043d\u0441\u043e\u043d",
+	"last-station-group" : "\u0428\u0410\u041d\u0421\u041e\u041d",
+	"last-station-notifications" : true,
+	"notification-verbose" : true,
+	"notifications" : true,
+	"split-title" : true,
+	"volume-level" : 100
+}

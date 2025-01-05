@@ -1,0 +1,1577 @@
+[
+	{
+		"group" : "\u0418\u0417\u0411\u0420\u0410\u041d\u041d\u041e\u0415",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "\u0424\u043e\u043d\u043e\u0432\u0430\u044f \u043c\u0443\u0437\u044b\u043a\u0430 Niose FM",
+				"url" : "http://noisefm.ru:8000/play256"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u0442\u0430\u0440\u043e\u0435 \u0440\u0430\u0434\u0438\u043e (\u0440\u0430\u0434\u0438\u043e\u0441\u043f\u0435\u043a\u0442\u0430\u043a\u043b\u0438)",
+				"url" : "http://staroeradio.ru:8000/ices128"
+			},
+			{
+				"image" : null,
+				"name" : "Salseo",
+				"url" : "https://stream.radio.co/s579ede15c/listen"
+			},
+			{
+				"image" : null,
+				"name" : "\u0440\u0430\u0434\u0438\u043e \u0427\u0418\u041f\u041b\u042c\u0414\u0423\u041a",
+				"url" : "http://radio.4duk.ru/4duk128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Borneo",
+				"url" : "http://live.borneo.ru:8888/128"
+			},
+			{
+				"image" : null,
+				"name" : "Queen",
+				"url" : "http://ic5.101.ru:8000/a54"
+			},
+			{
+				"image" : null,
+				"name" : "\u0411\u0438\u0442\u043b\u0437",
+				"url" : "http://www.beatlesradio.com:8000/stream/1/"
+			},
+			{
+				"image" : null,
+				"name" : "RMFCuba Krak\u00f3w",
+				"url" : "http://rmfstream2.interia.pl:8000/rmfcuba"
+			},
+			{
+				"image" : null,
+				"name" : "\u041f\u0435\u0440\u0432\u043e\u0435 \u0416\u0414 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://1zd.su:8000/radio"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0435\u0434\u043b\u044f\u043a FM",
+				"url" : "http://air.radiorecord.ru:8102/mdl320"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u043f\u043b\u0438\u043d",
+				"url" : "http://ic7.101.ru:8000/a129"
+			},
+			{
+				"image" : null,
+				"name" : "Royal radio - LOUNGE",
+				"url" : "http://193.33.170.218:8000/RoyalLounge"
+			},
+			{
+				"image" : null,
+				"name" : "Royal radio - ROCK",
+				"url" : "http://193.33.170.218:8000/RoyalRock"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0443\u0441\u0441\u043a\u0438\u0435 \u043f\u0435\u0441\u043d\u0438",
+				"url" : "http://listen.rusongs.ru/ru-mp3-128"
+			},
+			{
+				"image" : null,
+				"name" : "\u041d\u0430\u0448\u0435 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://nashe1.hostingradio.ru/nashespb128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Romamtic",
+				"url" : "https://pub0302.101.ru:8443/stream/air/aac/64/101"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u043e\u043c\u0430\u043d\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0448\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson-romantic128.mp3"
+			}
+		]
+	},
+	{
+		"group" : "\u0428\u0410\u041d\u0421\u041e\u041d",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0430\u044f \u0412\u043e\u043b\u043d\u0430",
+				"url" : "http://inhold.org:8000/primvolna-ussuriysk?3dbd"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u043e\u043c\u0430\u043d\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0448\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson-romantic128.mp3?cfb4"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041d\u043e\u0441\u0442\u0430\u043b\u044c\u0436\u0438",
+				"url" : "http://78.159.239.19:8000/chanson?8d65"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0428\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson64.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0440\u043e\u043c\u0430\u043d\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0448\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson-romantic128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0428\u0430\u043d\u0441\u043e\u043d \u0431\u0435\u0437 \u0446\u0435\u043d\u0437\u0443\u0440\u044b",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson-uncensored128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0438\u043b\u0438\u0446\u0435\u0439\u0441\u043a\u0430\u044f \u0432\u043e\u043b\u043d\u0430",
+				"url" : "http://radio.mvd.ru:8000/mv128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0428\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson128.mp3?56e2"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u043e\u0440\u043e\u0436\u043d\u043e\u0435 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://dor2server.streamr.ru:8000/dor64no"
+			},
+			{
+				"image" : null,
+				"name" : "\u0425\u043e\u0440\u043e\u0448\u0435\u0435 \u0420\u0430\u0434\u0438\u043e",
+				"url" : "http://radio.horoshee.fm:8000/mp3?3d6fa000"
+			},
+			{
+				"image" : null,
+				"name" : "\u0428\u0430\u043d\u0441\u043e\u043d, \u0423\u043a\u0440\u0430\u0438\u043d\u0430",
+				"url" : "http://media2.brg.ua:8000/shansonh?4351"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u0430\u043b\u0438\u043d\u0430 \u041a\u0440\u0430\u0441\u043d\u0430\u044f",
+				"url" : "http://icecast-studio21.cdnvideo.ru/KalynaK1a?62dee82"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041a\u0430\u0431\u0440\u0438\u043e\u043b\u0435\u0442",
+				"url" : "http://setmedia.ru:8000/high3?273adc18"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0417\u0430\u0439\u0446\u0435\u0432 FM: \u0428\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://zaycevfm.cdnvideo.ru/ZaycevFMshanson128.mp3?ea6b"
+			},
+			{
+				"image" : null,
+				"name" : "\u0428\u0430\u043d\u0441\u043e\u043d \u041f\u043b\u044e\u0441 (\u043f\u043e\u043f\u0441\u0430)",
+				"url" : "http://radio.radioshansonplus.com:8050/radio?194f"
+			},
+			{
+				"image" : null,
+				"name" : "\u0428\u0430\u043d\u0441\u043e\u043d \u0431\u0435\u0437 \u0446\u0435\u043d\u0437\u0443\u0440\u044b",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson-uncensored128.mp3?cf27"
+			},
+			{
+				"image" : null,
+				"name" : "\u0428\u0430\u043d\u0441\u043e\u043d-\u0431\u043b\u0430\u0442\u043d\u044f\u043a",
+				"url" : "http://chanson.hostingradio.ru:8041/chanson-uncensored128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0428\u0430\u043d\u0441\u043e\u043d \u0425\u0417 \u043a\u0430\u043a\u043e\u0439",
+				"url" : "http://79.120.77.11:9025"
+			},
+			{
+				"image" : null,
+				"name" : "\u041f\u043e\u0441\u0442\u0448\u0430\u043d\u0441\u043e\u043d",
+				"url" : "http://79.120.77.11:9111"
+			},
+			{
+				"image" : null,
+				"name" : "\u0426\u044b\u0433\u0430\u043d\u0441\u043a\u0430\u044f \u041f\u0435\u0441\u043d\u044f",
+				"url" : "http://79.120.77.11:9075"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0438\u0445\u0430\u0438\u043b \u041a\u0440\u0443\u0433",
+				"url" : "http://music.myradio.ua:80/mihail-krug128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0438\u0445\u0430\u0438\u043b \u041a\u0440\u0443\u04332",
+				"url" : "http://ic5.101.ru:8000/a110"
+			},
+			{
+				"image" : null,
+				"name" : "\u0411\u0430\u0440\u0434\u043e\u0432\u0441\u043a\u0430\u044f \u041f\u0435\u0441\u043d\u044f",
+				"url" : "http://79.120.39.202:9021"
+			},
+			{
+				"image" : null,
+				"name" : "\u0411\u0443\u0442\u044b\u0440\u043a\u0430",
+				"url" : "http://ic5.101.ru:8000/p440645"
+			},
+			{
+				"image" : null,
+				"name" : "RadioSureoldie \u043b\u0438\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u043c\u0435\u0446\u043a\u0438\u0435 \u043f\u0435\u0441\u043d\u0438",
+				"url" : "http://87.118.87.46:8888/stream/1/"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0435\u0442\u0440\u043e FM (1995)",
+				"url" : "http://retroserver.streamr.ru:8043/retro32"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0435\u0442\u0440\u043e FM 70\u0435",
+				"url" : "http://retro70.hostingradio.ru:8025/retro70-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0435\u0442\u0440\u043e FM 80\u0435",
+				"url" : "http://retro80.hostingradio.ru:8025/retro80-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0435\u0442\u0440\u043e FM 90\u0435",
+				"url" : "http://retro80.hostingradio.ru:8025/retro80-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u042d\u043b\u044c\u0434\u043e\u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://emgspb.hostingradio.ru/eldoradio64.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u043e\u0440\u043e\u0436\u043d\u043e\u0435 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://dorognoe.hostingradio.ru:8000/dorognoe"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u043e\u0440\u043e\u0436\u043d\u043e\u0435 \u0440\u0430\u0434\u0438\u043e \u0422\u0430\u043d\u0446\u044b \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+				"url" : "http://dor2server.streamr.ru:8000/dorognoe1945.mp3"
+			}
+		]
+	},
+	{
+		"group" : "\u041c\u041e\u042f \u041c\u041e\u041b\u041e\u0414\u041e\u0421\u0422\u042c",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Aquarium&BG",
+				"url" : "https://i-radio.info:8005/radio"
+			},
+			{
+				"image" : null,
+				"name" : "\u0411\u0413 \u0438 \u0410\u043a\u0432\u0430\u0440\u0438\u0443\u043c",
+				"url" : "http://ic5.101.ru:8000/a57"
+			},
+			{
+				"image" : null,
+				"name" : "\u0413\u0440\u0443\u043f\u043f\u0430 \u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435",
+				"url" : "https://pub0202.101.ru:8443/stream/personal/aacp/64/134970?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpcCI6Ijk1Ljc5LjMyLjE0OSIsInVzZXJhZ2VudCI6Ik1vemlsbGFcLzUuMCAoWDExOyBMaW51eCB4ODZfNjQpIEFwcGxlV2ViS2l0XC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWVcLzc4LjAuMzkwNC44NyBTYWZhcmlcLzUzNy4zNiIsInVpZF9jaGFubmVsIjoiMTM0OTcwIiwidHlwZV9jaGFubmVsIjoicGVyc29uYWwiLCJleHAiOjE1ODMyNjU4MDN9.CHrLpb9EmYkPFjIXIsbCnclnooPgCa1FiKVQJ8WDsY0"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e 101, \u0411\u0413 \u0438 \u0410\u043a\u0432\u0430\u0440\u0438\u0443\u043c",
+				"url" : "http://pub0101.101.ru:8000/stream/pro/aac/64/57"
+			},
+			{
+				"image" : null,
+				"name" : "\u041d\u0438\u043a\u043e\u043b\u044c\u0441\u043a\u0438\u0439, \u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435, \u041c\u0430\u0448\u0438\u043d\u0430 \u0432\u0440\u0435\u043c\u0435\u043d\u0438, \u0420\u0443\u0441\u0441\u043a\u0438\u0439 \u0440\u043e\u043a 90-\u0435",
+				"url" : "http://ic2.101.ru:8000/a59"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u043a\u0430\u0440\u0435\u0432\u0438\u0447",
+				"url" : "http://ic7.101.ru:8000/stream/personal/aacp/64/721226?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpcCI6Ijk1Ljc5LjMyLjE0OSIsInVzZXJhZ2VudCI6Ik1vemlsbGFcLzUuMCAoWDExOyBMaW51eCB4ODZfNjQpIEFwcGxlV2ViS2l0XC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWVcLzc4LjAuMzkwNC44NyBTYWZhcmlcLzUzNy4zNiIsInVpZF9jaGFubmVsIjoiNzIxMjI2IiwidHlwZV9jaGFubmVsIjoicGVyc29uYWwiLCJleHAiOjE1ODI0MTExOTZ9.04SqhmHdFfYvdaCo0ZJ0ElSxnM62XbEczxzvwqSEmqg"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u0436\u0430\u0437, \u041c\u0430\u0440\u0433\u0443\u043b\u0438\u0441 \u0438 \u0434\u0440.",
+				"url" : "http://ic2.101.ru:8000/a59"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u0414\u0422, \u042e\u0440\u0438\u0439 \u0428\u0435\u0432\u0447\u0443\u043a",
+				"url" : "http://ic2.101.ru:8000/a112"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u0414\u0422",
+				"url" : "http://ic7.101.ru:8000/a112"
+			},
+			{
+				"image" : null,
+				"name" : "\u0428\u0435\u0432\u0447\u0443\u043a \u0414\u0414\u0422 \u043a\u0430\u043d\u0430\u043b2",
+				"url" : "http://ic2.101.ru:8000/c1321"
+			},
+			{
+				"image" : null,
+				"name" : "\u0413\u0440\u0443\u043f\u043f\u0430 \u0427\u0430\u0439\u0444",
+				"url" : "http://ic2.101.ru:8000/c1315"
+			},
+			{
+				"image" : null,
+				"name" : "\u041d\u0430\u0443\u0442\u0438\u043b\u0443\u0441 \u041f\u043e\u043c\u043f\u0438\u043b\u0438\u0443\u0441",
+				"url" : "http://ic7.101.ru:8000/a126"
+			},
+			{
+				"image" : null,
+				"name" : "\u0412\u0438\u043a\u0442\u043e\u0440 \u0426\u043e\u0439",
+				"url" : "http://ic7.101.ru:8000/a103"
+			},
+			{
+				"image" : null,
+				"name" : "\u0413\u0440\u0443\u043f\u043f\u0430 \u041b\u044e\u0431\u044d",
+				"url" : "http://ic2.101.ru:8000/a158"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0443\u0441\u0441\u043a\u0438\u0439 \u0440\u044d\u043f",
+				"url" : "http://ic2.101.ru:8000/a162"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0443\u0441\u0441\u043a\u043e\u0435 \u0420\u0430\u0434\u0438\u043e: \u0412.\u0421. \u0412\u044b\u0441\u043e\u0446\u043a\u0438\u0439",
+				"url" : "https://rr-vysockij.hostingradio.ru/vysockij96.aacp?f6fa"
+			},
+			{
+				"image" : null,
+				"name" : "\u041b\u044e\u0431\u044d",
+				"url" : "http://ic7.101.ru:8000/a158"
+			}
+		]
+	},
+	{
+		"group" : "\u0424\u041e\u041d\u041e\u0412\u0410\u042f \u041c\u0423\u0417\u042b\u041a\u0410",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "RadioBOSS Stream",
+				"url" : "http://185.53.169.128:8000/192"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0410\u0414\u0418\u041e RELAX FM",
+				"url" : "https://pub0302.101.ru:8443/stream/air/aac/64/200?d0f3"
+			},
+			{
+				"image" : null,
+				"name" : "RADIO RECORD CHILLOUT",
+				"url" : "https://radiorecord.hostingradio.ru/chil96.aacp?2b5a"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u043f\u043e\u043a\u043e\u0439\u043d\u043e\u0435 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "https://listen1.myradio24.com/6262?51e8"
+			},
+			{
+				"image" : null,
+				"name" : "\u0411\u0440\u043e\u0434\u044f\u0433\u0430 \u041e\u043d\u043b\u0430\u0439\u043d (\u0424\u043e\u043b\u043a, \u0427\u0438\u043b\u043b\u0430\u0443\u0442)",
+				"url" : "https://listen6.myradio24.com/traveller?83b9b924"
+			},
+			{
+				"image" : null,
+				"name" : "ROYAL RADIO LOUNGE",
+				"url" : "https://lounge.royalmusic.keenetic.pro/?4377"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0410\u0414\u0418\u041e \u0417\u0410\u0419\u0426\u0415\u0412 FM RELAX",
+				"url" : "https://zaycevfm.cdnvideo.ru/ZaycevFMrelax128.mp3?6768"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0410\u0414\u0418\u041e \u0412\u0415\u0427\u0415\u0420\u041d\u0418\u0419 \u0411\u0420\u0418\u0417",
+				"url" : "https://listen6.myradio24.com/82666?d6acc02b"
+			},
+			{
+				"image" : null,
+				"name" : "Cafe Del Mar",
+				"url" : "https://stream.zenolive.com/g1s30spcdxquv?9a0f"
+			},
+			{
+				"image" : null,
+				"name" : "Costa Del Mar: Chillout",
+				"url" : "https://radio4.cdm-radio.com:18020/stream-mp3-Chill?359e479d"
+			},
+			{
+				"image" : null,
+				"name" : "Radio ChillOutPlanet",
+				"url" : "https://a2.radioheart.ru:9001/chilloutplanet?ccd0"
+			},
+			{
+				"image" : null,
+				"name" : "ABC Lounge Music Radio",
+				"url" : "https://eu1.fastcast4u.com/proxy/kpmxz?mp=/1?5297"
+			},
+			{
+				"image" : null,
+				"name" : "Kamchatka Live: Chillout",
+				"url" : "https://radio.kamchatkalive.ru:8103/chillout?ea9b21"
+			},
+			{
+				"image" : null,
+				"name" : "New Age Radio",
+				"url" : "https://a7.radioheart.ru:8044/newageradio?7a56"
+			},
+			{
+				"image" : null,
+				"name" : "Nebula \u0440\u0430\u0434\u0438\u043e (\u0421\u0430\u043c\u0430\u0440\u0430)",
+				"url" : "https://nebula.radioca.st/live.mp3?e97e"
+			},
+			{
+				"image" : null,
+				"name" : "Mixadance FM: Relax",
+				"url" : "https://stream.mixadance.fm/relax?c7e6"
+			},
+			{
+				"image" : null,
+				"name" : "FluxLounge",
+				"url" : "https://fluxfm.streamabc.net/flx-fluxlounge-mp3-128-8660249"
+			},
+			{
+				"image" : null,
+				"name" : "Deep House Radio",
+				"url" : "https://deephouseradio.radioca.st/"
+			},
+			{
+				"image" : "",
+				"name" : "RMF FM Polska",
+				"notifications" : true,
+				"url" : "https://rs103-krk-cyfronet.rmfstream.pl/RMFFM48"
+			}
+		]
+	},
+	{
+		"group" : "\u0420\u0415\u0422\u0420\u041e",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e\u043b\u0430 \u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434",
+				"url" : "http://online1.gkvr.ru:8000/radiolasrt64.aac?type=.flv"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0435\u0442\u0440\u043eFM \u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434",
+				"url" : "http://retroserver.streamr.ru:8043/retro256.mp3?43c9"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u043e\u0431\u0440\u044b\u0435 \u0441\u043e\u0432\u0435\u0442\u0441\u043a\u0438\u0435 \u043f\u0435\u0441\u043d\u0438",
+				"url" : "http://82.146.35.241:8000/dobroe"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u0435\u0442\u0440\u043e \u0425\u0438\u0442",
+				"url" : "http://212.26.146.50:8000/retro1.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u0435\u0442\u0440\u043e FM",
+				"url" : "http://retroserver.streamr.ru:8043/retro256.mp3?8d1a"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0414\u0438\u0441\u043a\u043e\u0442\u0435\u043a\u0430 90-\u0445",
+				"url" : "http://air.radiorecord.ru:805/sd90320?b7b77d14"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u0438\u0441\u043a\u043e\u0442\u0435\u043a\u0430 80-\u0445",
+				"url" : "http://ic2.101.ru/a1?18e98cab"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041c\u0438\u043b\u0438\u0446\u0435\u0439\u0441\u043a\u0430\u044f \u0412\u043e\u043b\u043d\u0430",
+				"url" : "https://radiomv.hostingradio.ru:80/radiomv128.mp3?c37a"
+			},
+			{
+				"image" : null,
+				"name" : "Nostalgia FM (\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433)",
+				"url" : "http://www.nostalgia.fm:8000/nostalgiafm.mp3?3c03"
+			},
+			{
+				"image" : null,
+				"name" : "Radio Record: 1980-e",
+				"url" : "http://air.radiorecord.ru:805/1980320?42b4"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e\u043b\u0430 (\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433 106,2 FM)",
+				"url" : "http://online1.gkvr.ru:8000/radiolaeka64.aac?87e6"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041c\u0435\u043b\u043e\u0434\u0438\u044f (\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433)",
+				"url" : "http://stream128.melodiafm.spb.ru:8000/melodia128?868d"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0417\u043e\u043b\u043e\u0442\u043e\u0439 \u0412\u0435\u043a",
+				"url" : "http://setmedia.ru:8000/high?ec2a"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041f\u043e\u0434\u043c\u043e\u0441\u043a\u043e\u0432\u043d\u044b\u0435 \u0432\u0435\u0447\u0435\u0440\u0430",
+				"url" : "http://setmedia.ru:8000/high5?0214"
+			},
+			{
+				"image" : null,
+				"name" : "\u041f\u043e\u0434\u043c\u043e\u0441\u043a\u043e\u0432\u043d\u044b\u0435 \u0432\u0435\u0447\u0435\u0440\u0430",
+				"url" : "http://setmedia.ru:8000/high5"
+			},
+			{
+				"image" : null,
+				"name" : "\u0414\u0435\u043d\u044c \u043f\u043e\u0431\u0435\u0434\u044b, \u0441\u043e\u0432\u0435\u0442\u0441\u043a\u0430\u044f \u0431\u0440\u0430\u0432\u0443\u0440\u043d\u0430\u044f",
+				"url" : "http://ic2.101.ru:8000/c1810"
+			},
+			{
+				"image" : null,
+				"name" : "CCCP 50-e",
+				"url" : "http://ic2.101.ru:8000/a47"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u044f\u0431\u0440\u044b",
+				"url" : "http://109.68.190.202:8131/stream"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u0442\u0430\u0440\u043e\u0435 \u0440\u0430\u0434\u0438\u043e: \u041c\u0443\u0437\u044b\u043a\u0430",
+				"url" : "http://server.audiopedia.su:8000/music32"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u0442\u0430\u0440\u043e\u0435 \u0440\u0430\u0434\u0438\u043e2",
+				"url" : "http://server.audiopedia.su:8000/music64"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u0442\u0430\u0440\u043e\u0435 \u0440\u0430\u0434\u0438\u043e3",
+				"url" : "http://server.audiopedia.su:8000/music128"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u0442\u0430\u0440\u043e\u0435 \u0440\u0430\u0434\u0438\u043e4",
+				"url" : "http://195.91.237.50:8000/music32"
+			},
+			{
+				"image" : null,
+				"name" : "Retro FM 70s",
+				"url" : "http://retro70.hostingradio.ru:8025/retro70-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "Retro FM 80s",
+				"url" : "http://retro80.hostingradio.ru:8025/retro80-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "Retro FM 90s",
+				"url" : "http://retro90.hostingradio.ru:8025/retro90-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041d\u0430\u0444\u0442\u0430\u043b\u0438\u043d ( \u043f\u0435\u0441\u043d\u0438 \u0421\u0421\u0421\u0420)",
+				"url" : "http://air.radiorecord.ru:805/naft320"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0443\u0437\u043a\u043e\u043c.\u0420\u0423",
+				"url" : "http://stream5.radiostyle.ru:8005/theatre"
+			}
+		]
+	},
+	{
+		"group" : "\u041f\u041e\u041f\u0421\u0410",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "\u041f\u0435\u0441\u043d\u0438 \u0420\u0443\u043a\u0438 \u0412\u0432\u0435\u0440\u0445",
+				"url" : "http://ic7.101.ru:8000/a163"
+			},
+			{
+				"image" : null,
+				"name" : "\u041d\u0430\u0448\u0435 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://nashe1.hostingradio.ru/nashe-128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0435\u0442\u0430\u0440\u0430\u0434\u0438\u043e \u043f\u043e\u043f\u0441\u0430",
+				"url" : "http://s2.metaradio.ru/mradio.rbi1"
+			},
+			{
+				"image" : null,
+				"name" : "AVTORADIO-M7",
+				"url" : "http://ic2.101.ru:8000/s5"
+			},
+			{
+				"image" : null,
+				"name" : "\u041f\u0438\u043e\u043d\u0435\u0440 \u0441\u0446\u0443\u043a\u043e \u0432\u0441\u0435\u043c \u0440\u0435\u0431\u044f\u0442\u0438\u043c \u043f\u0440\u0438\u043c\u0435\u0440",
+				"url" : "https://radio.dline-media.com:80/ppr90.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e\u043b\u0430 106,2 FM",
+				"url" : "http://online1.gkvr.ru:8000/radiolaeka128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u044f\u043a",
+				"url" : "http://online.gtrkchita.ru:8100/mayak32"
+			},
+			{
+				"image" : null,
+				"name" : "\u042f\u0445\u0442\u043a\u043b\u0443\u0431 \u041c\u0430\u0439\u0430\u043c\u0438",
+				"url" : "http://sail.yachtrockmiami.com:8000/radio.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041d\u0430\u0442\u0430\u043b\u0438",
+				"url" : "http://setmedia.ru:8000/high4"
+			},
+			{
+				"image" : null,
+				"name" : "Sandra",
+				"url" : "http://ic7.101.ru:8000/a179"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e\u0412\u0435\u0440\u0441\u0442\u0430 (\u041c\u043e\u0442\u043e\u0440\u0430\u0434\u0438\u043e)",
+				"url" : "http://92.63.97.12:8000/radio"
+			},
+			{
+				"image" : null,
+				"name" : "YUM.FM (\u0420\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u044b KFC)",
+				"url" : "http://yumfm.hostingradio.ru:8020/yumfm128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0410\u0434\u0440\u0438\u0430\u043d\u043e \u0427\u0435\u043b\u0435\u043d\u0442\u0430\u043d\u043e",
+				"url" : "http://ic7.101.ru:8000/a277"
+			},
+			{
+				"image" : null,
+				"name" : "Royal radio - RUSSIAN",
+				"url" : "http://185.39.195.90:8000/royalrussian"
+			},
+			{
+				"image" : null,
+				"name" : "Royal radio - LOVE",
+				"url" : "http://193.33.170.218:8000/RoyaLove"
+			},
+			{
+				"image" : null,
+				"name" : "Royal radio - TRAP",
+				"url" : "http://193.33.170.218:8000/RoyalTrap"
+			},
+			{
+				"image" : null,
+				"name" : "\u041f\u043e\u0434\u043c\u043e\u0441\u043a\u043e\u0432\u043d\u044b\u0435 \u0432\u0435\u0447\u0435\u0440\u0430 (\u0425\u0438\u043c\u043a\u0438)",
+				"url" : "http://setmedia.ru:8000/high5"
+			},
+			{
+				"image" : null,
+				"name" : "Radio Chocolate",
+				"url" : "http://choco.hostingradio.ru:10010/fm"
+			},
+			{
+				"image" : null,
+				"name" : "Europa Plus",
+				"url" : "http://ep32server.streamr.ru:8033/europaplus32.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "Europa Plus Top 40",
+				"url" : "http://eptop128server.streamr.ru:8033/eptop128"
+			},
+			{
+				"image" : null,
+				"name" : "Europa Plus Light",
+				"url" : "http://emg02.hostingradio.ru/ep-light128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "Europa Plus New",
+				"url" : "http://emg02.hostingradio.ru/ep-new128.mp3"
+			}
+		]
+	},
+	{
+		"group" : "\u0414\u0416\u0410\u0417",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e JAZZ (\u041c\u043e\u0441\u043a\u0432\u0430 89,1 FM)",
+				"url" : "http://nashe.streamr.ru/jazz-128.mp3?de9f"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u042d\u0440\u043c\u0438\u0442\u0430\u0436 (90,1 FM)",
+				"url" : "http://91.190.117.131:8000/live?6d526b98"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Bob Jazz (\u0427\u0435\u043b\u044f\u0431\u0438\u043d\u0441\u043a)",
+				"url" : "http://stream01.radiocon.ru:8000/bobjazz?36837235"
+			},
+			{
+				"image" : null,
+				"name" : "Relax FM: JAZZ",
+				"url" : "http://ic3.101.ru:8000/c192?04f1"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041d\u043e\u0441\u0442\u0430\u043b\u044c\u0436\u0438: Jazz",
+				"url" : "http://78.159.239.19:8000/jazz?c2fc"
+			},
+			{
+				"image" : null,
+				"name" : "RadioJ",
+				"url" : "http://radio.adds.su:8020/radioj?8999"
+			},
+			{
+				"image" : null,
+				"name" : "BluesMen Channel (Hits)",
+				"url" : "http://173.249.21.17:8108/;?a2e34473"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e XO FM (\u0420\u0438\u0433\u0430 101,0 FM)",
+				"url" : "https://live.xo.fm/xofm128?10e5"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e 1Jazz",
+				"url" : "http://radio.1jazz.ru:8000/radio?147d4ede"
+			},
+			{
+				"image" : null,
+				"name" : "True Jazz Legends",
+				"url" : "http://jfm1.hostingradio.ru:14536/jlstream.mp3?4f63"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Smooth JAZZ",
+				"url" : "http://jfm1.hostingradio.ru:14536/sjstream.mp3?abb9"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Jazz Vocals",
+				"url" : "http://jfm1.hostingradio.ru:14536/jvstream.mp3?a9d4"
+			},
+			{
+				"image" : null,
+				"name" : "\u041f\u0435\u0440\u0432\u043e\u0435 \u0420\u0430\u0434\u0438\u043e FM1 (\u041e\u0434\u0435\u0441\u0441\u0430 87,5 FM)",
+				"url" : "http://195.138.81.134:8000/radio1-128?dd5c32d1"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e The Breeze",
+				"url" : "http://ample-zeno-06.radiojar.com/e1aq6cu8pg5tv?rj-ttl=5&rj-token=AAABZnfyP2F7zGel8TgHXHLNj8lX92CKdeqZbhVj6Dv1Y5TI0JaXGQ?c787"
+			},
+			{
+				"image" : null,
+				"name" : "Radio BSJ (Best Smooth Jazz) \u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a",
+				"url" : "http://176.9.150.163:8026/stream?1ac015bb"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041e\u043a\u043e\u043b\u043e \u0414\u0436\u0430\u0437\u0430",
+				"url" : "http://109.170.8.130/;stream.nsv?6f6a"
+			},
+			{
+				"image" : null,
+				"name" : "Deluxe Easy Radio",
+				"url" : "http://46.245.183.120:8000/0009?1d52184e"
+			},
+			{
+				"image" : null,
+				"name" : "Jazz Radio",
+				"url" : "http://85.25.217.22:8050/;stream.nsv?6745d"
+			},
+			{
+				"image" : null,
+				"name" : "Radio Swiss Jaz",
+				"url" : "http://stream.srg-ssr.ch/m/rsj/mp3128?f22e"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Jazz FM (\u0421\u043e\u0444\u0438\u044f 104,0 FM)",
+				"url" : "http://live.btvradio.bg/jazz-fm.mp3?d5849885"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e Sax4Love",
+				"url" : "http://sc-sax4ever.1.fm:10148/?da4e"
+			},
+			{
+				"image" : null,
+				"name" : "Smooth Jazz",
+				"url" : "http://79.120.39.202:9017"
+			},
+			{
+				"image" : null,
+				"name" : "Jazz Funk",
+				"url" : "http://79.120.39.202:9047"
+			},
+			{
+				"image" : null,
+				"name" : "Future Jazz",
+				"url" : "http://79.111.14.76:9011"
+			},
+			{
+				"image" : null,
+				"name" : "Free Jazz",
+				"url" : "http://79.111.14.76:9095"
+			},
+			{
+				"image" : null,
+				"name" : "Contemporary Jazz",
+				"url" : "http://79.111.119.111:9017"
+			},
+			{
+				"image" : null,
+				"name" : "Soul Jazz",
+				"url" : "http://79.111.14.76:9121"
+			},
+			{
+				"image" : null,
+				"name" : "Modern Creative",
+				"url" : "http://79.120.77.11:9133"
+			},
+			{
+				"image" : null,
+				"name" : "Swing",
+				"url" : "http://79.120.39.202:9019"
+			},
+			{
+				"image" : null,
+				"name" : "Vocal Jazz",
+				"url" : "http://79.120.39.202:9083"
+			},
+			{
+				"image" : null,
+				"name" : "Hard Bop",
+				"url" : "http://79.111.14.76:9047"
+			},
+			{
+				"image" : null,
+				"name" : "Bossa Nova",
+				"url" : "http://79.111.14.76:9105"
+			},
+			{
+				"image" : null,
+				"name" : "Afro-Cuban Jazz",
+				"url" : "http://79.111.119.111:9055"
+			},
+			{
+				"image" : null,
+				"name" : "Gypsy Jazz",
+				"url" : "http://79.120.77.11:9129"
+			},
+			{
+				"image" : null,
+				"name" : "Jazz Pop",
+				"url" : "http://79.120.39.202:9135"
+			},
+			{
+				"image" : null,
+				"name" : "Big Band",
+				"url" : "http://79.120.39.202:9023"
+			},
+			{
+				"image" : null,
+				"name" : "Cool Jazz",
+				"url" : "http://79.120.39.202:9085"
+			},
+			{
+				"image" : null,
+				"name" : "Post Bop",
+				"url" : "http://79.111.14.76:9045"
+			},
+			{
+				"image" : null,
+				"name" : "Piano JazzStride",
+				"url" : "http://79.111.119.111:9059"
+			},
+			{
+				"image" : null,
+				"name" : "Avant-Garde JazzFree Improvisation",
+				"url" : "http://79.111.119.111:9101"
+			},
+			{
+				"image" : null,
+				"name" : "Funeral Jazz",
+				"url" : "http://79.120.39.202:9137"
+			},
+			{
+				"image" : null,
+				"name" : "Dixieland",
+				"url" : "http://79.120.39.202:9039"
+			},
+			{
+				"image" : null,
+				"name" : "Acid Jazz",
+				"url" : "http://79.111.14.76:9001"
+			},
+			{
+				"image" : null,
+				"name" : "Mainstream Jazz",
+				"url" : "http://79.111.14.76:9085"
+			},
+			{
+				"image" : null,
+				"name" : "Jazz Fusion",
+				"url" : "http://79.111.119.111:9009"
+			},
+			{
+				"image" : null,
+				"name" : "\u0425\u0417 Jazz",
+				"url" : "http://79.120.77.11:9005"
+			},
+			{
+				"image" : null,
+				"name" : "Guitar Jazz",
+				"url" : "http://79.120.77.11:9131"
+			},
+			{
+				"image" : null,
+				"name" : "OFR.FM: JAZZ & BLUES",
+				"url" : "http://air.ofr.fm:8008"
+			}
+		]
+	},
+	{
+		"group" : "BLUES",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Acoustic blues",
+				"url" : "http://79.111.14.76:9071"
+			},
+			{
+				"image" : null,
+				"name" : "Neo Soul",
+				"url" : "http://79.120.39.202:9061"
+			},
+			{
+				"image" : null,
+				"name" : "Funk",
+				"url" : "http://79.111.119.111:9061"
+			},
+			{
+				"image" : null,
+				"name" : "Harmonica Blues",
+				"url" : "http://79.120.39.202:9081"
+			},
+			{
+				"image" : null,
+				"name" : "Folk Blues",
+				"url" : "http://79.120.77.11:9121"
+			},
+			{
+				"image" : null,
+				"name" : "Chicago Blues",
+				"url" : "http://79.111.14.76:9091"
+			},
+			{
+				"image" : null,
+				"name" : "Hard Blues",
+				"url" : "http://79.120.77.11:9119"
+			},
+			{
+				"image" : null,
+				"name" : "\u043f\u0440\u043e\u0441\u0442\u043e Blues",
+				"url" : "http://79.120.77.11:9013"
+			},
+			{
+				"image" : null,
+				"name" : "Modern Electric Blues",
+				"url" : "http://79.111.14.76:9007"
+			},
+			{
+				"image" : null,
+				"name" : "Soul Blues",
+				"url" : "http://79.111.14.76:9123"
+			},
+			{
+				"image" : null,
+				"name" : "\u042d\u0440\u043c\u0438\u0442\u0430\u0436",
+				"url" : "http://91.190.127.185:8000/livetest"
+			}
+		]
+	},
+	{
+		"group" : "\u0420\u0415\u0413\u0413\u0418",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0414\u0436\u0430",
+				"url" : "https://i-radio.info:8015/radio"
+			},
+			{
+				"image" : null,
+				"name" : "Reggae",
+				"url" : "http://79.120.39.202:9063"
+			},
+			{
+				"image" : null,
+				"name" : "Ska",
+				"url" : "http://79.111.119.111:9043"
+			},
+			{
+				"image" : null,
+				"name" : "Dub",
+				"url" : "http://79.111.14.76:9029"
+			},
+			{
+				"image" : null,
+				"name" : "Ska PunCore",
+				"url" : "http://79.111.119.111:9039"
+			},
+			{
+				"image" : null,
+				"name" : "DancehallRaggamuffin",
+				"url" : "http://79.111.14.76:9057"
+			},
+			{
+				"image" : null,
+				"name" : "Roots Reggae",
+				"url" : "http://79.111.119.111:9047"
+			},
+			{
+				"image" : null,
+				"name" : "Reggae 141",
+				"url" : "http://hestia2.cdnstream.com/1301128"
+			},
+			{
+				"image" : null,
+				"name" : "Guitar",
+				"url" : "http://79.120.39.202:9073/"
+			},
+			{
+				"image" : null,
+				"name" : "Songs, instrumental",
+				"url" : "http://79.111.119.111:9103/"
+			},
+			{
+				"image" : null,
+				"name" : "Dub",
+				"url" : "http://79.111.14.76:9029/"
+			},
+			{
+				"image" : null,
+				"name" : "Jazz",
+				"url" : "http://79.111.119.111:9009/;"
+			}
+		]
+	},
+	{
+		"group" : "\u0410 \u041f\u041e\u0413\u041e\u0412\u041e\u0420\u0418\u0422\u042c?",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Business FM",
+				"url" : "https://bfm.hostingradio.ru:9075/fm"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u0435\u0440\u0435\u0431\u0440\u044f\u043d\u044b\u0439 \u0434\u043e\u0436\u0434\u044c",
+				"url" : "http://213.59.4.27:8000/stream48.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0412\u0438\u0442\u0435\u0431\u0441\u043a",
+				"url" : "http://radio.vtv.by:8000/radiovitebsk128"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041c\u0438\u0440",
+				"url" : "http://icecast.mirtv.cdnvideo.ru:8000/radiomir128"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041a\u0443\u043b\u044c\u0442\u0443\u0440\u0430",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/kulturafmmp3192kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u044f\u043a",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru:80/mayakfmmp3192kbps"
+			},
+			{
+				"image" : null,
+				"name" : "Sputnik",
+				"url" : "http://audio2.video.ria.ru:80/voicerus"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u044f\u043a",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/mayakfmmp364kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/rrzonammp364kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041a\u0443\u043b\u044c\u0442\u0443\u0440\u0430",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/kulturafmmp364kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u0412\u0435\u0441\u0442\u0438 FM",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/vestifmmp364kbps"
+			},
+			{
+				"image" : null,
+				"name" : "Latvijas Radio 4 \u2013 \u0414\u043e\u043c\u0441\u043a\u0430\u044f \u043f\u043b\u043e\u0449\u0430\u0434\u044c",
+				"url" : "http://lr4mp1.latvijasradio.lv:8020"
+			},
+			{
+				"image" : null,
+				"name" : " Polskie Radio S.A.",
+				"url" : "http://stream3.polskieradio.pl:8914"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e\u0433\u0430\u0437\u0435\u0442\u0430 \u0421\u043b\u043e\u0432\u043e (2001)",
+				"url" : "http://radio-tochka.com:6055"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u044c\u0441\u043a\u0430\u044f \u043f\u0440\u0430\u0432\u0434\u0430",
+				"url" : "http://kpradio.hostingradio.ru:8000/russia.radiokp32.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u043e\u043c\u043c\u0435\u0440\u0441\u0430\u043d\u0442\u044a FM",
+				"url" : "http://kommersant77.hostingradio.ru:8016/kommersant32.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0413\u043e\u0432\u043e\u0440\u0438\u0442 \u041c\u043e\u0441\u043a\u0432\u0430",
+				"url" : "http://media.govoritmoskva.ru:8880/ru32.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0417\u0432\u0435\u0437\u0434\u0430 (2005)",
+				"url" : "http://stream.radiozvezda.ru:8088/zvezda64"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041a\u043d\u0438\u0433\u0430",
+				"url" : "http://bookradio.hostingradio.ru:8069/fm"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u044f\u043a (\u0411\u0430\u0440\u043d\u0430\u0443\u043b)",
+				"url" : "http://83.246.143.25:8000/MyacLow"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u044f\u043a (\u041a\u043e\u0441\u0442\u0440\u043e\u043c\u0430)",
+				"url" : "http://46.42.5.109:8000"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u0430\u044f\u043a (\u041e\u0440\u0435\u043d\u0431\u0443\u0440\u0433)",
+				"url" : "http://213.135.124.30:8000/maiak.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438\u0438",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru:80/rrzonammp3192kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438\u0438 (\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433)",
+				"url" : "http://195.190.97.147:8000/live"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438\u0438 (\u0421\u0430\u043c\u0430\u0440\u0430)",
+				"url" : "http://tvsamara.ru:8001/Russia"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438\u0438 (\u041e\u0440\u0435\u043d\u0431\u0443\u0440\u0433)",
+				"url" : "http://213.135.124.30:8000/russia.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438\u0438 (\u0411\u0443\u0440\u044f\u0442\u0438\u044f)",
+				"url" : "http://94.25.43.77:80"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0422\u0430\u0442\u0430\u0440\u0441\u0442\u0430\u043d (\u041a\u0430\u0437\u0430\u043d\u044c 99,2 FM)",
+				"url" : "http://94.180.249.163:8000/tatar64kbps.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0420\u043e\u0441\u0441\u0438\u0438 FM",
+				"url" : "http://icecast-vgtrk.cdnvideo.ru/russiafmmp3192"
+			},
+			{
+				"image" : null,
+				"name" : "\u042d\u0445\u043e \u041c\u043e\u0441\u043a\u0432\u044b - \u041c\u043e\u0441\u043a\u0432\u0430",
+				"url" : "http://ice912.echo.msk.ru:9120/stream"
+			},
+			{
+				"image" : null,
+				"name" : "\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043ai\u0439 \u041ci\u0440\u044a",
+				"url" : "http://83.217.203.197/stream/2/"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u044c\u0441\u043a\u0430\u044f \u041f\u0440\u0430\u0432\u0434\u0430",
+				"url" : "http://ic3.101.ru:8000/vkp1"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u044c\u0441\u043a\u0430\u044f \u041f\u0440\u0430\u0432\u0434\u0430 - \u041c\u043e\u0441\u043a\u0432\u0430",
+				"url" : "http://kpradio.hostingradio.ru:8000/128"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u044c\u0441\u043a\u0430\u044f \u041f\u0440\u0430\u0432\u0434\u0430 - \u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a",
+				"url" : "http://kpradio.hostingradio.ru:8000/novosibirsk.radiokp128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u043e\u043c\u043c\u0435\u0440\u0441\u0430\u043d\u0442\u044a 93,6 FM - \u041c\u043e\u0441\u043a\u0432\u0430",
+				"url" : "http://kommersant77.hostingradio.ru:8016/kommersant128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0413\u0440\u0430\u0434 \u041f\u0435\u0442\u0440\u043e\u0432 - \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433",
+				"url" : "http://www.grad-petrov.ru:8093/mp3-40"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0443\u0441\u0441\u043a\u0438\u0439 \u041c\u0438\u0440",
+				"url" : "http://s4.radioheart.ru:8029/live"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041a\u0443\u043b\u044c\u0442\u0443\u0440\u0430",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru:80/kulturafmmp3192kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u041c\u043e\u0441\u043a\u0432\u0430 \u0424\u041c",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru:80/moscowfm128"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u042d\u0439\u042d\u0439 (\u0431\u043e\u0440\u044c\u0431\u0430 \u0441 \u0430\u043b\u043a\u043e\u0433\u043e\u043b\u0438\u0437\u043c\u043e\u043c)",
+				"url" : "http://a2.radioheart.ru:8025/radioAAgroup"
+			},
+			{
+				"image" : null,
+				"name" : "euronews radio",
+				"url" : "http://euronews-05.ice.infomaniak.ch:80/euronews-05.aac"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0421\u043f\u0443\u0442\u043d\u0438\u043a",
+				"url" : "http://audio2.video.ria.ru:80/voicerus"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0421\u0432\u043e\u0431\u043e\u0434\u0430",
+				"url" : "http://svobodanews.fvds.ru:8000/TestRFERLstream"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041d\u0415\u0421\u0422\u0410\u041d\u0414\u0410\u0420\u0422",
+				"url" : "http://listen.radionestandart.ru:8200/128.mp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u0417\u0432\u0435\u0437\u0434\u0430",
+				"url" : "http://89.208.99.16:8088/zvezda128 "
+			},
+			{
+				"image" : null,
+				"name" : "\u0412\u0435\u0441\u0442\u0438 FM",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/vestifmmp3192kbps"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0410\u0414\u0418\u041e 1 - \u041f\u0435\u0440\u0432\u043e\u0435 \u043f\u043e\u0434\u043c\u043e\u0441\u043a\u043e\u0432\u043d\u043e\u0435",
+				"url" : "http://cdn.radio1.news:8000/rtvpmp3"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041d\u0430\u0433\u0438\u043d\u0441\u043a",
+				"url" : "http://radio-noginska.ru:8000"
+			},
+			{
+				"image" : null,
+				"name" : "\u0420\u0430\u0434\u0438\u043e \u041c\u043e\u0441\u043a\u0432\u044b",
+				"url" : "http://icecast.vgtrk.cdnvideo.ru/moscowtalk128"
+			},
+			{
+				"image" : null,
+				"name" : "\u041a\u0440\u0430\u0441\u043d\u043e\u0435 \u0440\u0430\u0434\u0438\u043e",
+				"url" : "http://listen2.myradio24.com/zuek1917"
+			},
+			{
+				"image" : null,
+				"name" : "\u0411\u0438\u0437\u043d\u0435\u0441 FM",
+				"url" : "https://bfm.hostingradio.ru:9075/fm"
+			}
+		]
+	},
+	{
+		"group" : "\u041b\u0410\u0422\u0418\u041d\u0421\u041a\u0418\u0415",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Top Latino Radio",
+				"url" : "http://online.radiodifusion.net:8020/listen.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Reggaeton 24/7",
+				"url" : "http://cc.net2streams.com/tunein.php/reggaeton/playlist.pls"
+			},
+			{
+				"image" : null,
+				"name" : "radio matanzas cuba",
+				"url" : "https://icecast.teveo.cu/LsxKNz7b"
+			},
+			{
+				"image" : null,
+				"name" : "Quebradillas radio, Puerto Rico",
+				"url" : "https://stream.radio.co/s579ede15c/listen"
+			},
+			{
+				"image" : null,
+				"name" : "Salseo",
+				"url" : "https://stream.radio.co/s579ede15c/listen"
+			}
+		]
+	},
+	{
+		"group" : "Pop / Rock",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "181.FM Classic Hits",
+				"url" : "http://www.181.fm/winamp.pls?station=181-greatoldies&file=181-greatoldies.pls"
+			},
+			{
+				"image" : null,
+				"name" : ".977 Classic Rock",
+				"url" : "http://www.977music.com/tunein/web/classicrock.asx"
+			},
+			{
+				"image" : null,
+				"name" : "Covers",
+				"url" : "http://somafm.com/covers.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Queen",
+				"url" : "http://ic5.101.ru:8000/a54"
+			},
+			{
+				"image" : null,
+				"name" : "ABBA",
+				"url" : "http://ic7.101.ru:8000/a104"
+			},
+			{
+				"image" : null,
+				"name" : "Deep Purple",
+				"url" : "http://ic7.101.ru:8000/a125"
+			},
+			{
+				"image" : null,
+				"name" : "Radio Paradise",
+				"url" : "http://www.radioparadise.com/musiclinks/rp_128.m3u"
+			},
+			{
+				"image" : null,
+				"name" : ".977 The Hitz Channel",
+				"url" : "http://www.977music.com/tunein/web/hitz.asx"
+			},
+			{
+				"image" : null,
+				"name" : "Indie Pop Rocks!",
+				"url" : "http://somafm.com/indiepop.pls"
+			},
+			{
+				"image" : null,
+				"name" : "PopTron",
+				"url" : "http://somafm.com/poptron.pls"
+			}
+		]
+	},
+	{
+		"group" : "Oldies",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "AM 1710",
+				"url" : "http://lin2.ash.fast-serv.com:9022/listen.pls"
+			},
+			{
+				"image" : null,
+				"name" : "AM 600",
+				"url" : "http://206.190.133.196:7013/listen.pls"
+			},
+			{
+				"image" : null,
+				"name" : "WNAR",
+				"url" : "http://live.wnar-am.com:8500/listen.pls"
+			}
+		]
+	},
+	{
+		"group" : "Chill",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Lounge Radio",
+				"url" : "http://www.lounge-radio.com/listen128.m3u"
+			},
+			{
+				"image" : null,
+				"name" : "Beat Blender",
+				"url" : "http://somafm.com/beatblender.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Secret Agent",
+				"url" : "http://somafm.com/secretagent.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Groove Salad",
+				"url" : "http://somafm.com/groovesalad.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Illinois Street Lounge",
+				"url" : "http://somafm.com/illstreet.pls"
+			}
+		]
+	},
+	{
+		"group" : "Country",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Boot Liquor",
+				"url" : "http://somafm.com/bootliquor.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Highway 181",
+				"url" : "http://www.181.fm/winamp.pls?station=181-highway&file=181-highway.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Country 108",
+				"url" : "http://www.country108.com/listen.pls"
+			},
+			{
+				"image" : null,
+				"name" : "WAMU Bluegrass Country",
+				"url" : "http://ice24.securenetsystems.net/WAMU2"
+			}
+		]
+	},
+	{
+		"group" : "Techno / Electronic",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Drone Zone",
+				"url" : "http://somafm.com/dronezone.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Space Station Soma",
+				"url" : "http://somafm.com/spacestation.pls"
+			},
+			{
+				"image" : null,
+				"name" : "cliqhop idm",
+				"url" : "http://somafm.com/cliqhop.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Black Rock FM",
+				"url" : "http://somafm.com/brfm.pls"
+			},
+			{
+				"image" : null,
+				"name" : "New Dance Radio",
+				"url" : "http://jbstream.net/tunein.php/blackoutworm/playlist.asx"
+			},
+			{
+				"image" : null,
+				"name" : "DubStep Beyond",
+				"url" : "http://somafm.com/play/dubstep32"
+			}
+		]
+	},
+	{
+		"group" : "Community",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Jupiter Broadcast",
+				"url" : "http://jblive.fm/"
+			}
+		]
+	},
+	{
+		"group" : "root",
+		"image" : "",
+		"stations" : []
+	}
+]
