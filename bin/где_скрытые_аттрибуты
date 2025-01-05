@@ -1,0 +1,8 @@
+#!/bin/bash
+#by el guahiro, 79201111365@yandex.ru
+#GPLv3 (GNU General Public License Version 3)
+echo -e "\n
+Привет! Я найду для тебя расположение файлов со скрытыми атрибутами в этой папке. \n
+Если понял, о чём я, напиши здесь - что ищешь \n"
+read response
+find . -iname "*" | while read i; do getfattr --only-values "$i" | grep --color=auto -iH --label="$i" "$response";done

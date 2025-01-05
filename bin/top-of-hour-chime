@@ -1,0 +1,21 @@
+#! /bin/bash
+# information taken from website https://askubuntu.com/questions/832072/can-i-use-cron-to-chime-at-top-of-hour-like-a-grandfather-clock/832266#832266
+# NAME: top-of-hour-chime
+# PATH: /home/user/.local/bin/
+
+# exit # uncomment to suppress when watching movies
+
+# paplay needs environment variable exported:
+export XDG_RUNTIME_DIR="/run/user/1000"
+
+# needed for notify-send
+eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)";
+
+# get hour in 12 hour format
+HOUR=$(date +%I)
+ZHOUR=$(echo $HOUR | sed 's/^0*//')
+
+pactl set-sink-volume 0 -25%
+DISPLAY=:0 notify-send --urgency=critical --icon=/usr/share/icons/gnome/256x256/status/appointment-soon.png "Сейчас ""$ZHOUR"":00, пора отдохнуть, сделать несколько упражнений!"
+mpv /home/user/Музыка/Big-Ben.ogg
+pactl set-sink-volume 0 +25%

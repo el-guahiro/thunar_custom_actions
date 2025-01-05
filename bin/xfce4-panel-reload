@@ -1,0 +1,4 @@
+#!/bin/bash
+#by el guahiro, 79201111365@yandex.ru
+#GPLv3 (GNU General Public License Version 3)
+killall xfce4-panel ; /usr/bin/xfce4-panel

@@ -1,0 +1,2 @@
+#!/bin/bash
+timer=`zenity --entry --title="ТАЙМЕР" --text="сингал через.... минут, например" --entry-text="10"`; echo "mpv ~/Музыка/Bliss.ogg" | at now + $timer min

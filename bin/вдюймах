@@ -1,0 +1,55 @@
+#!/usr/bin/perl -w
+#$Revision: 1.3 $
+########################################################################
+#
+# SYNOPSIS
+#	mm2in -- Convert millimeters to inches
+#
+# ORIGIN
+#	http://sourceforge.net/projects/futil
+#
+# DATE
+#	Thu Dec  8 21:03:22 2005
+#
+# DESCRIPTION
+#	Converts millimeters on the command line to inches on stdout.
+#
+# USAGE
+#	mm2in mm ...
+#
+# EXIT STATUS
+#	Zero on success; non-zero otherwise.
+#
+# FILES
+#	n/a
+#
+# INDENTATION STYLE
+#	One tab = four spaces
+#
+# LICENSE
+#	Distributed under the terms of the Academic Free License, v2.1.
+#	See the LICENSE.txt file for the terms and provisions.
+#
+########################################################################
+
+use File::Basename;
+
+my $myname = File::Basename::basename ${0}, ".pl";
+
+our $VERSION = '$Revision: 1.3 $';
+
+for ($VERSION) {
+	s/\$Revision: 1.3 $//;
+	s/\s*\$$//;
+}
+
+if ($#ARGV >= 0) {
+	for (my $i = 0; $i < $#ARGV; $i++) {
+		printf "%1.1f x ", $ARGV[$i]/25.4;
+	}
+
+	printf "%1.1f дюймов\n", $ARGV[$#ARGV]/25.4;
+} else {
+	printf STDERR "usage: $myname <mm> ...\n";
+	exit 1;
+}
