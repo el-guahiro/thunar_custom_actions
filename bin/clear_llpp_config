@@ -1,0 +1,4 @@
+#!/bin/bash
+#by el guahiro, 79201111365@yandex.ru
+#GPLv3 (GNU General Public License Version 3)
+sed -i '67,$d'  ~/.config/llpp.conf ; echo '</llppconfig>' >>~/.config/llpp.conf

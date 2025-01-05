@@ -1,0 +1,103 @@
+#!/usr/bin/perl -w
+
+# delink: dereference hard or symbolic link, creating regular file
+
+use Cwd qw'abs_path';
+use Getopt::Std;
+use File::Basename;
+
+$0 =~ s:.*/::;
+
+$usage = 
+  "$0: convert (dereference) hard or symbolic link to regular file\n".
+  "usage: [-v] file(s)\n";
+
+$opt_h = $opt_v = 0;
+getopts('hv') or die $usage;
+
+if ($opt_h) {
+  print $usage;
+  exit;
+}
+
+die $usage if @ARGV < 1;
+
+$error = 0;
+
+foreach $file (@ARGV) {
+  unless (-e $file or -l $file) {
+    $error++;
+    warn "$0: cannot access '$file'\n";
+    next;
+  }
+  unless (-f $file or -l $file) {
+    $error++;
+    # warn "$0: '$file' is not a regular file or symbolic link\n";
+    warn "$0: '$file' is not a linked file\n";
+    next;
+  }
+  unless (@s = lstat $file) {
+    $error++;
+    warn "$0: cannot stat '$file' - $!\n";
+    next;
+  }
+  $di = $s[0].':'.$s[1];
+  $di{$di}++;
+  if (not -l $file or -l $file and not -f $file) {
+    if ($s[3] == 1 and $di{$di} == 1) {
+      warn "$0: '$file' is not a linked file\n";
+      next;
+    }
+  }
+  
+  $dir = dirname($file);
+  unless (-w $dir) {
+    $error++;
+    warn "$0: '$dir/' is not writable\n";
+    next;
+  }
+  
+  $file_ = $file;
+  $file_ .= '_' while lstat $file_;
+
+  if (-l $file and not -f $file) {
+    $link = readlink($file);
+    unless (defined $link) {
+      $error++;
+      warn "$0: cannot readlink '$file' - $!\n";
+      next;
+    }
+    unless (symlink $link,$file_) {
+      $error++;
+      warn "$0: cannot symlink '$file_' - $!\n";
+      next;
+    }
+    print "$file -> $file_ " if $opt_v;
+  } else {
+    $link = $file;
+    $link = abs_path(readlink($file)) if -l $file and -f $file;
+    system qw'rsync -aAXL',$link,$file_;
+    if ($?) {
+      system qw'rsync -aL',$link,$file_;
+      if ($?) {
+        $error++;
+        next;
+      }
+    }
+    print "$link -> $file_ " if $opt_v;
+  }
+  
+  print "-> $file\n" if $opt_v;
+  unless (unlink $file) {
+    $error++;
+    warn "$0: cannot remove '$file' - $!\n";
+    next;
+  }
+  unless (rename $file_,$file) {
+    $error++;
+    warn "$0: cannot rename '$file_' to '$file' - $!\n";
+    next;
+  }
+}
+  
+exit ($error?1:0);

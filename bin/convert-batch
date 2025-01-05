@@ -1,0 +1,96 @@
+#!/bin/bash
+dirStructure=same
+while getopts "d:f:m:o:q:x:s:r:znlt" flag
+do
+  case $flag in
+    d ) size=$OPTARG;;
+    f ) sourcedir=$OPTARG;;
+    m ) match=$OPTARG;;
+    o ) destdir=$OPTARG;;
+    q ) quality=$OPTARG;;
+    x ) exclude=$OPTARG;;
+    r ) replace=$OPTARG;;
+    z ) zoom=y;;
+    n ) dryrun=y;;
+    l ) dirStructure=relative;;
+    t ) dirStructure=flat;;
+  esac
+done
+shift $((OPTIND-1)); OPTIND=1
+
+if [ -z "$size" ]; then
+  echo "USAGE: batch_jpeg -d <geometry> [ -z ] [ -q <quality (70)> ]
+       [ -m <match pattern (*.jpg)> ] [ -e <exclude pattern> ]
+       [ -f <from dir> ] [ -o <destination dir> ] [ -l ] [ -n ]
+OPTIONS:
+  -d  Output image dimensions, as <width>x<height>.
+  -f  Path to search within for source images. All images in this directory and
+      subdirectories, except those excluded with -x, are processed. Defaults to
+      the current directory.
+  -m  Pattern to match files for processing, default *.jpg.
+  -o  Output directory. The subdirectory structure of the source directory will
+      be copied. Without this option, images are resized in place.
+  -l  Output directory is created relative to each file. If -e is not given, it
+      is set to exclude this directory.
+  -t  Output files are put in the same directory, ignoring the source
+      directory's structure
+  -q  Quality, 0-100, default 70.
+  -e  Exclude file pattern. If -l is used, this defaults to exclude that
+      path.
+  -r  PERL regular expression to transform the output filenames.
+  -z  Zoom image to fill new ratio. Without this option the image aspect is
+      preserved.
+  -n  Print the source and output filenames without writing any files or
+      creating any directories."
+  exit 0
+fi
+wd=`pwd`
+if [ -z "$sourcedir" ]; then sourcedir="$wd"; fi
+if [ -z "$destdir" -a "$dirStructure" != relative ]; then destdir="$sourcedir"; fi
+if [ -z "$match" ]; then match=\*.jpg; fi
+if [ -z "$quality" ]; then quality=70; fi
+if [ -n "$destdir" -a "$dirStructure" != relative -a ${destdir:0:1} != "/" ]; then
+  # -r not set, make destdir an absolute path
+  destdir="$wd/$destdir"
+fi
+if [ "$dirStructure" = relative -a -z "$exclude" ]; then
+  exclude=\*$destdir\*
+fi
+cd "$sourcedir"
+if [ -n "$exclude" ]; then
+  excludefiles=$(find . -path "$exclude")
+fi
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
+if [ "$dryrun" = y ]; then
+  echo "DRY RUN"
+fi
+for file in $(find . -path "$match"); do
+  if [ -n "$exclude" -a -n "`echo $excludefiles | grep $file`" ]; then
+    # skip excluded files
+    continue
+  fi
+  src="$file"
+  if [ -n "$replace" ]; then
+    output_basename=$(basename $file | perl -pe "s$replace")
+  else
+    output_basename=`basename $file`
+  fi
+  if [ "$dirStructure" = relative ]; then
+    output="`dirname $file`/$destdir/$output_basename"
+  elif [ "$dirStructure" = flat ]; then
+    output="$destdir/$output_basename"
+  else
+    output="$destdir/$src"
+  fi
+  echo -e "\nSOURCE: $file\nOUTPUT: $output"
+  if [ -z "$dryrun" ]; then
+    mkdir -p "`dirname "$output"`"
+    if [ "$zoom" = y ]; then
+      convert "$src" -resize ${size}^ -gravity Center -crop $size+0+0 -quality $quality $output
+    else
+      convert "$src" -resize $size -quality $quality $output
+    fi
+  fi
+done
+IFS=$SAVEIFS

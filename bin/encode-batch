@@ -1,0 +1,111 @@
+#!/bin/bash
+
+script_name=`basename $0`
+
+framerate=29.97
+bitrate=500k
+src_extension=.jpg
+overwrite=n
+
+while getopts "ar:b:e:w" flag; do
+  case $flag in
+    a ) recurse=y;;
+    r ) framerate=$OPTARG;;
+    b ) bitrate=$OPTARG;;
+    e ) src_extension=$OPTARG;;
+    w ) overwrite=y;;
+  esac
+done
+shift $((OPTIND-1)); OPTIND=1
+
+src_path=$1
+out_path=$2
+
+if [[ -z $src_path || -z $out_path ]]; then
+  echo "\
+USAGE:
+  $script_name [options] <source-path> <output-path>
+
+OPTIONS:
+  -a encode subdirectories as videos without prompting.
+
+  -r <framerate>
+
+  -b <bitrate>
+      a number with the units k or M
+
+  -e <source extension>
+      default .jpg
+
+  -w  do not skip existing video files. avconv/ffmpeg will request
+  confirmation."
+  exit 0
+fi
+
+out_path=$(dirname $out_path)/$(basename $out_path)
+
+function encode_one_series() {
+  local name output src tmp wd
+  src=$(cd $1; pwd)
+  name=$(basename $src)
+  output=$out_path/$name.mp4
+  tmp=/tmp/enc-series
+
+  if [ -e $output -a $overwrite != y ]; then
+    echo "$output exists, use -w to overwrite"
+    return 0
+  fi
+
+  echo "encoding $output"
+
+  rm -rf $tmp/*
+  mkdir -p $tmp
+  i=0
+  echo "$(ls -1 $src | wc -l) images in the series"
+  echo "linking series for encoding"
+  for file in $src/*$src_extension; do
+    i=$(($i+1))
+    padded=$i
+    while [ ${#padded} -lt 6 ]; do
+      padded=0$padded
+    done
+    ln -s $file $tmp/$padded$src_extension
+  done
+
+# FIXME: detect if neither avconv or ffmpeg is installed
+# if [ hash avconv 2>/dev/null ]; then
+#   if [ hash ffmpeg 2>/dev/null  ]; then
+#     ffmpeg \
+#       -r $framerate \
+#       -i $tmp/%6d$src_extension \
+#       -b $bitrate \
+#       -vcodec libx264 \
+#       $output
+#   else
+    avconv \
+      -r $framerate \
+      -i $tmp/%06d$src_extension \
+      -b $bitrate \
+      -c\:v libx264 \
+      $output
+    # TODO; enable 2-pass encoding
+#     echo "$script_name requires either avconv or ffmpeg"
+#     exit 0
+#   fi
+# fi
+}
+if [ -n "$(ls -d $src_path/*/)" ]; then
+  if [[ -z $recurse ]]; then
+    read -n 1 -p "Encode each subdirectory as a video? [Y/n] " && echo -en "\n"
+    if [[ $REPLY =~ ^[Yy]*$ ]]; then
+      recurse=y
+    fi
+  fi
+  if [[ y = $recurse ]]; then
+    for subdir in $(ls -d $src_path/*/); do
+      encode_one_series $subdir
+    done
+  else
+    encode_one_series $src_path
+  fi
+fi

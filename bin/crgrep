@@ -1,0 +1,195 @@
+#!/bin/bash
+#
+# -----------------------------------------------------------------------------
+# Crgrep start script.
+#
+# Author: Craig Ryan [cryan.dublin@gmail.com]
+#
+# Environment Variable Prequisites
+#
+#   CRGREP_HOME       (Optional) Home directory for crgrep
+#   CRGREP_OPTS       (Optional) Java runtime options used when the command is
+#                      executed.
+#
+#   CRGREP_TMPDIR     (Optional) Directory path location of temporary directory
+#                      the JVM should use (java.io.tmpdir).  Defaults to
+#                      $CRGREP_HOME/temp.
+#
+#   JAVA_HOME          Must point at your Java Development Kit installation.
+#
+#   CRGREP_JVM_OPTS   (Optional) Java runtime options used when the command is
+#                       executed.
+#
+# -----------------------------------------------------------------------------
+
+set -f
+
+function usage()
+{
+    echo "Usage: $0 <search-pattern> [<resource-pattern>]  (try -h for full description)."
+    exit 1
+}
+
+[ $# -gt 0 ] || usage
+
+# resolve links - $0 may be a softlink (including relative links)
+PRGDIR=`dirname "$0"`
+THIS_PROG=`cd "$PRGDIR" ; pwd`/`basename "$0"`
+
+while [ -h "$THIS_PROG" ]; do
+  ls=`ls -ld "$THIS_PROG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '^/.*' > /dev/null; then
+    THIS_PROG="$link"
+  else
+    THIS_PROG=`dirname "$THIS_PROG"`/"$link"
+  fi
+done
+
+# Get standard environment variables
+PRGDIR=`dirname "$THIS_PROG"`
+CRGREP_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
+
+unset THIS_PROG
+
+# OS specific support.
+cygwin=false;
+darwin=false;
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+  Darwin*) darwin=true
+           if [ -z "$JAVA_VERSION" ] ; then
+             JAVA_VERSION="CurrentJDK"
+           fi
+		   if [ -z "$JAVA_HOME" ]; then
+		      if [ -x "/usr/libexec/java_home" ]; then
+			      JAVA_HOME=`/usr/libexec/java_home`
+			  else
+			      JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/${JAVA_VERSION}/Home
+			  fi
+           fi       
+           ;;
+esac
+
+if [ -z "$JAVA_HOME" ] ; then
+  if [ -r /etc/gentoo-release ] ; then
+    JAVA_HOME=`java-config --jre-home`
+  fi
+fi
+
+# For Cygwin, ensure paths are in UNIX format before anything is touched
+if $cygwin ; then
+  [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
+  [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
+fi
+
+# If a specific java binary isn't specified search for the standard 'java' binary
+if [ -z "$JAVACMD" ] ; then
+  if [ -n "$JAVA_HOME"  ] ; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+      # AIX oddness
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+    fi
+  else
+    JAVACMD=`which java`
+  fi
+fi
+
+if [ ! -x "$JAVACMD" ] ; then
+  echo "Error: JAVA_HOME is not defined correctly." 1>&2
+  echo "  CRGREP cannot execute $JAVACMD" 1>&2
+  echo "" 1>&2
+  echo "Please, set the JAVA_HOME variable in your environment to match the" 1>&2
+  echo "location of the Java Virtual Machine you want to use." 1>&2
+  exit 1
+fi
+
+#if $cygwin; then
+#  [ -n "$CRGREP_HOME" ] && CRGREP_HOME=`cygpath --unix "$CRGREP_HOME"`
+#fi
+
+if [ -z "$CRGREP_TMPDIR" ] ; then
+  # Define the java.io.tmpdir to use for Crgrep
+  CRGREP_TMPDIR="$CRGREP_HOME"/temp
+  mkdir -p "$CRGREP_TMPDIR"
+fi
+
+# OCR support. Verify language data files are accessible
+if [ -z "$TESSDATA_PREFIX" -o ! -d $TESSDATA_PREFIX/tessdata ]
+then
+	if $cygwin; then
+		TESSDATA_PREFIX=$CRGREP_HOME/ocr
+	elif [ -d /usr/share/tesseract-ocr/tessdata ]; then
+		TESSDATA_PREFIX=/usr/share/tesseract-ocr
+    elif [ -d /usr/local/share/tessdata ]; then
+		TESSDATA_PREFIX=/usr/local/share
+    elif [ -d /usr/share/tesseract/tessdata ]; then
+		TESSDATA_PREFIX=/usr/share/tesseract
+    elif [ -d /opt/tesseract/tessdata ]; then
+		TESSDATA_PREFIX=/opt/tesseract
+    else
+		TESSDATA_PREFIX=$CRGREP_HOME/ocr
+	fi
+fi
+
+export TESSDATA_PREFIX
+
+# Attempt to link in the OCR library
+if ! $cygwin ; then
+	if [ ! -f $CRGREP_HOME/ocr/libtesseract.so.3 ]; then
+		if [ -f /usr/lib/libtesseract.so.3 ]; then
+			ln -s /usr/lib/libtesseract.so.3 $CRGREP_HOME/ocr
+		fi
+	fi
+fi
+
+if $cygwin; then
+	if [ x$PROCESSOR_ARCHITECTURE == xx86 -a -n "$PROCESSOR_ARCHITEW6432" ]
+	then
+		OCR_DIR=ocr
+    else
+		OCR_DIR="ocr/x64"
+    fi
+else 
+	OCR_DIR=ocr
+	# In case any tesseract lib deps are placed into ocr/
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$CRGREP_HOME/ocr"
+	export LD_LIBRARY_PATH
+fi
+
+CRGREP_LIB_PATH="$PATH:$CRGREP_HOME/$OCR_DIR"
+CRGREP_CLASSPATH="$CRGREP_HOME/lib/*"
+PATH="$PATH:$CRGREP_HOME/$OCR_DIR"
+
+# For Cygwin, switch paths to Windows format before running java
+if $cygwin; then
+  CRGREP_LIB_PATH=`cygpath --path --windows "$CRGREP_LIB_PATH"`
+  CRGREP_CLASSPATH=`cygpath --path --windows "$CRGREP_CLASSPATH"`
+  CRGREP_HOME=`cygpath --windows "$CRGREP_HOME"`
+  CRGREP_TMPDIR=`cygpath --windows "$CRGREP_TMPDIR"`
+  TESSDATA_PREFIX=`cygpath --windows "$TESSDATA_PREFIX"`
+fi
+
+# ----- Execute The Requested Command -----------------------------------------
+
+#echo "Using CRGREP_HOME:   $CRGREP_HOME"
+#echo "Using CRGREP_TMPDIR: $CRGREP_TMPDIR"
+#echo "Using CRGREP_LIB_PATH: $CRGREP_LIB_PATH"
+#echo "Using JAVA_HOME:      $JAVA_HOME"
+#echo "Using TESSDATA_PREFIX:      $TESSDATA_PREFIX"
+
+# Uncomment to enable remote debugging
+# DEBUG="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y"
+
+exec "$JAVACMD" $JAVA_OPTS  \
+    -classpath "$CRGREP_CLASSPATH" \
+	$DEBUG \
+    -XX:-PrintWarnings \
+    $CRGREP_JVM_OPTS \
+    -Dcrgrep.home="$CRGREP_HOME" \
+    -Dcrgrep.tessdata="$TESSDATA_PREFIX" \
+    -Djava.io.tmpdir="$CRGREP_TMPDIR" \
+    -Djna.library.path="$CRGREP_LIB_PATH" \
+    com.ryanfuse.crgrep.ResourceGrep "$@"
