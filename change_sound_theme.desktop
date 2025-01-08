@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Сменить звуковую тему
+Exec=change_sound_theme.sh
+StartupNotify=false
+Terminal=false
+Icon=preferences-desktop-sound
+Categories=System;Monitor;
+Comment=
+Path=
